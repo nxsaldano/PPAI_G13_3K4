@@ -1,0 +1,10 @@
+C:\Users\leo35\source\repos\PPAI_G13_3K4\PPAI_G13_3K4\bin\Debug\PPAI_G13_3K4.exe.config
+C:\Users\leo35\source\repos\PPAI_G13_3K4\PPAI_G13_3K4\bin\Debug\PPAI_G13_3K4.exe
+C:\Users\leo35\source\repos\PPAI_G13_3K4\PPAI_G13_3K4\bin\Debug\PPAI_G13_3K4.pdb
+C:\Users\leo35\source\repos\PPAI_G13_3K4\PPAI_G13_3K4\obj\Debug\PPAI_G13_3K4.csproj.AssemblyReference.cache
+C:\Users\leo35\source\repos\PPAI_G13_3K4\PPAI_G13_3K4\obj\Debug\PPAI_G13_3K4.PantallaGenerarRanking.resources
+C:\Users\leo35\source\repos\PPAI_G13_3K4\PPAI_G13_3K4\obj\Debug\PPAI_G13_3K4.Properties.Resources.resources
+C:\Users\leo35\source\repos\PPAI_G13_3K4\PPAI_G13_3K4\obj\Debug\PPAI_G13_3K4.csproj.GenerateResource.cache
+C:\Users\leo35\source\repos\PPAI_G13_3K4\PPAI_G13_3K4\obj\Debug\PPAI_G13_3K4.csproj.CoreCompileInputs.cache
+C:\Users\leo35\source\repos\PPAI_G13_3K4\PPAI_G13_3K4\obj\Debug\PPAI_G13_3K4.exe
+C:\Users\leo35\source\repos\PPAI_G13_3K4\PPAI_G13_3K4\obj\Debug\PPAI_G13_3K4.pdb
