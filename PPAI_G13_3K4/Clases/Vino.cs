@@ -52,7 +52,7 @@ namespace PPAI_G13_3K4.Clases
         {
             return bodega.getNombre();
         }
-        public float calcularPuntajePromedio()
+        public float calcularPromedioPuntaje()
         {
             float puntajePromedio = 0;
             foreach (var item in reseña)
@@ -63,7 +63,7 @@ namespace PPAI_G13_3K4.Clases
         }
         public float obtenerPuntajePromedio()
         {
-            return calcularPuntajePromedio();
+            return calcularPromedioPuntaje();
         }
         public string verificarReseñasEnPeriodoDeSom()
         {
