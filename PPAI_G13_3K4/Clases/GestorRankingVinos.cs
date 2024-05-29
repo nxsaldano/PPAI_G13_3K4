@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using PPAI_G13_3K4;
 
 namespace PPAI_G13_3K4.Clases
 {
@@ -21,10 +24,9 @@ namespace PPAI_G13_3K4.Clases
         public string paises { get; set; }
         public string regioneVit { get; set; }
         public List<Vino> vino { get; set; }
-        private PantallaGenerarRanking pantalla { get; set; }
-        
+        private PantallaGenerarRanking pantalla;
 
-        public GestorRankingVinos(DateTime fechaDesdeSeleccionada, DateTime fechaHastaSeleccionada, string tipoReseñaSeleccionada, string tiposReseña, string formasVisualizacion, float puntajePromSom, float puntajePromGral, string vinosFiltrados, float puntajesPromedio, string bodegas, string paises, string regioneVit, List<Vino> vino, PantallaGenerarRanking pantalla)
+        public GestorRankingVinos(PantallaGenerarRanking pantalla)
         {
             this.fechaDesdeSeleccionada = fechaDesdeSeleccionada;
             this.fechaHastaSeleccionada = fechaHastaSeleccionada;
@@ -41,37 +43,35 @@ namespace PPAI_G13_3K4.Clases
             this.vino = vino;
             this.pantalla = pantalla;
         }
-
-        public string opcGenerarRankVinos()
+       
+        public void opcGenerarRankVinos()
         {
-            if (formasVisualizacion == "Por puntaje promedio")
-            {
-                return "Por puntaje promedio";
-            }
-            else
-            {
-                return "Por puntaje promedio de sommelier";
-            }
+            pantalla.solicitarFechaDesdeHasta();
         }
-        public DateTime tomarFechaDesdeRanking()
+        public void tomarFechaDesdeRanking(DateTime fechaDesde)
         {
-            return fechaDesdeSeleccionada;
+            fechaDesdeSeleccionada = fechaDesde;
         }
-        public DateTime tomarFechaHastaRanking()
+        public void tomarFechaHastaRanking(DateTime fechaHasta)
         {
-            return fechaHastaSeleccionada;
+            fechaHastaSeleccionada = fechaHasta;
+            pantalla.solicitarTipoReseña();
         }
-        public string tomarTipoReseña()
+        public void tomarTipoReseña(string tipoReseña)
         {
-            return tipoReseñaSeleccionada;
+            tipoReseñaSeleccionada = tipoReseña;
+            pantalla.mostrarFormasVisualizacion();
+            pantalla.solicitarFormaVisualizacion();
         }
-        public string tomarFormaVisualizacion()
+        public void tomarFormaVisualizacion(string formaVis)
         {
-            return formasVisualizacion;
+            formasVisualizacion = formaVis;
+            pantalla.solicitarConfirmacionReporte();
         }
-        public string tomarConfirmacionReporte()
+        public void tomarConfirmacionReporte()
         {
-            return "Reporte generado";
+            MessageBox.Show("Se generará el reporte.");
+            Application.Exit();
         }
         /*public string buscarVinosReseñaEnPeriodoDeSom()
         {
