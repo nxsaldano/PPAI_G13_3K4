@@ -45,6 +45,10 @@ namespace PPAI_G13_3K4
         {
             if (desde > hasta)
             {
+                lblTipoReseña.Visible = false;
+                cmbTipoReseña.Visible = false;
+                lblFormasVisReporte.Visible = false;
+                comboFormasVisReporte.Visible = false;
                 MessageBox.Show("La fecha 'Desde' no puede ser mayor que la fecha 'Hasta'.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
@@ -104,6 +108,7 @@ namespace PPAI_G13_3K4
 
         private void btnGenerarRankingVinos_Click(object sender, EventArgs e)
         {
+            btnGenerarRankingVinos.Visible = false;
             gestor.opcGenerarRankVinos();
         }
 
