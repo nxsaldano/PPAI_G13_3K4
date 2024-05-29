@@ -14,9 +14,9 @@ namespace PPAI_G13_3K4.Clases
         public DateTime fechaActualizacion { get; set; }
         public string imgenEtiqueta { get; set; }
         public float notaDeCataBodega { get; set; }
-        private Bodega bodega { get; set; }
-        private List<Varietal> varietal { get; set; }
-        private List<Reseña> reseña { get; set; }
+        public Bodega bodega { get; set; }
+        public List<Varietal> varietal { get; set; }
+        public List<Reseña> reseña { get; set; }
 
         public Vino(string nombre, float precioARS, int añada, DateTime fechaActualizacion, string imgenEtiqueta, float notaDeCataBodega, Bodega bodega, List<Varietal> varietal, List<Reseña> reseña)
         {
@@ -52,18 +52,22 @@ namespace PPAI_G13_3K4.Clases
         {
             return bodega.getNombre();
         }
-        public float calcularPromedioPuntaje()
+        public float calcularPromedioPuntaje(float puntajes)
         {
-            float puntajePromedio = 0;
-            foreach (var item in reseña)
-            {
-                puntajePromedio += item.puntaje;
-            }
-            return puntajePromedio / reseña.Count;
+            return puntajes/reseña.Count;
         }
-        public float obtenerPuntajePromedio()
+        public float obtenerPuntajePromedio(DateTime fechaDesde, DateTime fechaHasta)
         {
-            return calcularPromedioPuntaje();
+            float puntajes = 0;
+            foreach (Reseña reseña in reseña)
+            {
+                if (reseña.sosDePeriodo(fechaDesde, fechaHasta)&& reseña.sosDeSommelier())
+                {
+                    puntajes += reseña.getPuntaje();
+                }
+
+            }
+            return calcularPromedioPuntaje(puntajes);
         }
         public string verificarReseñasEnPeriodoDeSom()
         {

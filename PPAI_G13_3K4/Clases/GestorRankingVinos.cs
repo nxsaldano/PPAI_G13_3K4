@@ -15,15 +15,14 @@ namespace PPAI_G13_3K4.Clases
         public DateTime fechaDesdeSeleccionada { get; set; }
         public DateTime fechaHastaSeleccionada { get; set; }
         public string tipoReseñaSeleccionada { get; set; }
-        public string tiposReseña { get; set; }
         public string formasVisualizacion { get; set; }
         public float puntajePromSom { get; set; }
         public float puntajePromGral { get; set; }
-        public string vinosFiltrados { get; set; }
+        public List<Vino> vinosFiltrados { get; set; }
         public float puntajesPromedio { get; set; }
-        public string bodegas { get; set; }
-        public string paises { get; set; }
-        public string regioneVit { get; set; }
+        public List<Bodega> bodegas { get; set; }
+        public List<Pais> paises { get; set; }
+        public List<RegionVitivinicola> regioneVit { get; set; }
         public List<Vino> vino { get; set; }
         private PantallaGenerarRanking pantalla;
 
@@ -32,7 +31,6 @@ namespace PPAI_G13_3K4.Clases
             this.fechaDesdeSeleccionada = fechaDesdeSeleccionada;
             this.fechaHastaSeleccionada = fechaHastaSeleccionada;
             this.tipoReseñaSeleccionada = tipoReseñaSeleccionada;
-            this.tiposReseña = tiposReseña;
             this.formasVisualizacion = formasVisualizacion;
             this.puntajePromSom = puntajePromSom;
             this.puntajePromGral = puntajePromGral;
@@ -71,47 +69,42 @@ namespace PPAI_G13_3K4.Clases
         }
         public void tomarConfirmacionReporte()
         {
-            MessageBox.Show("Se generará el reporte.");
-            Application.Exit();
+            buscarVinosReseñaEnPeriodoDeSom();
         }
-        public string buscarVinosReseñaEnPeriodoDeSom()
+        public void buscarVinosReseñaEnPeriodoDeSom()
         {
             string filePath = "Recursos\\jsonVinos.txt"; // Reemplaza con la ruta correcta del archivo
             string jsonContent = File.ReadAllText(filePath);
-
             // Deserializar el contenido JSON en una lista de objetos Vino
             List<Vino> vinos = JsonConvert.DeserializeObject<List<Vino>>(jsonContent);
-            foreach (var item in vino)
+            foreach (Vino vino in vinos)
             {
-                List<Reseña> list = item.reseña;
-                for (int i = 0; i < list.Count; i++)
+                List<Reseña> listReseñas = vino.reseña;
+                for (int i = 0; i < listReseñas.Count; i++)
                 {
-                    Reseña item2 = list[i];
-                    if (item2.fechaReseña >= fechaDesdeSeleccionada && item2.fechaReseña <= fechaHastaSeleccionada && item2.esPremium == true)
+                    Reseña reseña = listReseñas[i];
+                    bool esDePeriodo = reseña.sosDePeriodo(this.fechaDesdeSeleccionada, this.fechaHastaSeleccionada);
+                    bool esDeSommelier = reseña.sosDeSommelier();
+                    if (esDePeriodo && esDeSommelier)
                     {
-                        vinos += item.getNombre() + " ";
+                        vinosFiltrados.Add(vino);
                     }
                 }
             }
-            return vinos;
+            puntajePromSom=calcularPuntajeProm();
         }
-        
-        /*public float calcularPuntajeProm()
+
+        public float calcularPuntajeProm()
         {
-            float puntajePromedio = 0;
-            foreach (var item in vino)
+            foreach (Vino vino in vinosFiltrados)
             {
-                foreach (var item2 in item.reseña)
-                {
-                    puntajePromedio += item2.puntaje;
-                }
+                puntajesPromedio+=vino.obtenerPuntajePromedio(fechaDesdeSeleccionada,fechaHastaSeleccionada);
             }
-            return puntajePromedio / vino.Count;
-        }*/
+            return puntajesPromedio / vino.Count;
+        }
         public string ordenarSegunPuntajePromedio()
         {
-            string vinos = "";
-            foreach (var item in vino)
+            foreach (Vino vino in vinosFiltrados)
             {
                 if (item.calcularPuntajePromedio() >= puntajePromGral)
                 {

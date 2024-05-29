@@ -27,33 +27,13 @@ namespace PPAI_G13_3K4.Clases
         {
             return puntaje;
         }
-        public string sosDePeriodo
+        public bool sosDePeriodo(DateTime fechaDesde, DateTime fechaHasta)
         {
-            get
-            {
-                if (fechaReseña.Year == 2021)
-                {
-                    return "Si";
-                }
-                else
-                {
-                    return "No";
-                }
-            }
+            return fechaDesde <= this.fechaReseña && this.fechaReseña <= fechaHasta;
         }
-        public string sosDeSommelier
+        public bool sosDeSommelier()
         {
-            get
-            {
-                if (esPremium)
-                {
-                    return "Si";
-                }
-                else
-                {
-                    return "No";
-                }
-            }
+            return this.esPremium;
         }
     }
 }
