@@ -73,7 +73,7 @@ namespace PPAI_G13_3K4.Clases
         }
         public void buscarVinosReseñaEnPeriodoDeSom()
         {
-            string filePath = "Recursos\\jsonVinos.txt"; // Reemplaza con la ruta correcta del archivo
+            string filePath = "..\\..\\Recursos\\jsonVinos.txt"; // Reemplaza con la ruta correcta del archivo
             string jsonContent = File.ReadAllText(filePath);
             // Deserializar el contenido JSON en una lista de objetos Vino
             List<Vino> vinos = JsonConvert.DeserializeObject<List<Vino>>(jsonContent);
@@ -102,32 +102,32 @@ namespace PPAI_G13_3K4.Clases
             }
             return puntajesPromedio / vino.Count;
         }
-        public string ordenarSegunPuntajePromedio()
-        {
-            foreach (Vino vino in vinosFiltrados)
-            {
-                if (item.calcularPuntajePromedio() >= puntajePromGral)
-                {
-                    vinos += item.getNombre() + " ";
-                }
-            }
-            return vinos;
-        }
-        public string buscarDatosDiezMejoresVinos()
-        {
-            string vinos = "";
-            List<Vino> lista = new List<Vino>();
-            foreach (var item in vino)
-            {
-                lista.Add(item);
-            }
-            lista.Sort((x, y) => y.calcularPuntajePromedio().CompareTo(x.calcularPuntajePromedio()));
-            for (int i = 0; i < 10; i++)
-            {
-                vinos += lista[i].getNombre() + " ";
-            }
-            return vinos;
-        }
+        //public string ordenarSegunPuntajePromedio()
+        //{
+        //    foreach (Vino vino in vinosFiltrados)
+        //    {
+        //        if (item.calcularPuntajePromedio() >= puntajePromGral)
+        //        {
+        //            vinos += item.getNombre() + " ";
+        //        }
+        //    }
+        //    return vinos;
+        //}
+        //public string buscarDatosDiezMejoresVinos()
+        //{
+        //    string vinos = "";
+        //    List<Vino> lista = new List<Vino>();
+        //    foreach (var item in vino)
+        //    {
+        //        lista.Add(item);
+        //    }
+        //    lista.Sort((x, y) => y.calcularPuntajePromedio().CompareTo(x.calcularPuntajePromedio()));
+        //    for (int i = 0; i < 10; i++)
+        //    {
+        //        vinos += lista[i].getNombre() + " ";
+        //    }
+        //    return vinos;
+        //}
         /*public string generarReporteExel()
         {
             string reporte = "";
