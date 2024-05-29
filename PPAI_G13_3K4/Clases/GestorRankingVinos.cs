@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PPAI_G13_3K4;
-
+using Newtonsoft.Json;
 namespace PPAI_G13_3K4.Clases
 {
     internal class GestorRankingVinos
@@ -73,9 +74,13 @@ namespace PPAI_G13_3K4.Clases
             MessageBox.Show("Se generará el reporte.");
             Application.Exit();
         }
-        /*public string buscarVinosReseñaEnPeriodoDeSom()
+        public string buscarVinosReseñaEnPeriodoDeSom()
         {
-            string vinos = "";
+            string filePath = "Recursos\\jsonVinos.txt"; // Reemplaza con la ruta correcta del archivo
+            string jsonContent = File.ReadAllText(filePath);
+
+            // Deserializar el contenido JSON en una lista de objetos Vino
+            List<Vino> vinos = JsonConvert.DeserializeObject<List<Vino>>(jsonContent);
             foreach (var item in vino)
             {
                 List<Reseña> list = item.reseña;
@@ -89,8 +94,8 @@ namespace PPAI_G13_3K4.Clases
                 }
             }
             return vinos;
-        }*/
-
+        }
+        
         /*public float calcularPuntajeProm()
         {
             float puntajePromedio = 0;
