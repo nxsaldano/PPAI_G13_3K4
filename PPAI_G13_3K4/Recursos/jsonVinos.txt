@@ -340,6 +340,12 @@
       "puntaje": 92,
       "comentario": "Robusto, con notas de cuero y tabaco.",
       "esPremium": true
+    },
+    {
+      "fechaReseña": "2024-05-22T00:00:00",
+      "puntaje": 90,
+      "comentario": "Vino con taninos bien marcados y notas a madera.",
+      "esPremium": true
     }
   ]
 },
@@ -378,6 +384,12 @@
       "puntaje": 86,
       "comentario": "Refrescante y cítrico, ideal para mariscos.",
       "esPremium": false
+    },
+    {
+      "fechaReseña": "2024-05-22T00:00:00",
+      "puntaje": 90,
+      "comentario": "Vino con taninos bien marcados y notas a madera.",
+      "esPremium": true
     }
   ]
 },
@@ -416,6 +428,12 @@
       "puntaje": 89,
       "comentario": "Agradable y afrutado, con taninos suaves.",
       "esPremium": false
+    },
+    {
+      "fechaReseña": "2024-05-22T00:00:00",
+      "puntaje": 90,
+      "comentario": "Vino con taninos bien marcados y notas a madera.",
+      "esPremium": true
     }
   ]
 },
@@ -454,6 +472,12 @@
       "puntaje": 94,
       "comentario": "Intenso y complejo, con notas de mora y especias.",
       "esPremium": true
+    },
+    {
+      "fechaReseña": "2024-05-22T00:00:00",
+      "puntaje": 90,
+      "comentario": "Vino con taninos bien marcados y notas a madera.",
+      "esPremium": true
     }
   ]
 },
@@ -491,6 +515,12 @@
       "fechaReseña": "2024-02-05T00:00:00",
       "puntaje": 90,
       "comentario": "Bien equilibrado, con notas de frutos secos y vainilla.",
+      "esPremium": true
+    },
+    {
+      "fechaReseña": "2024-05-22T00:00:00",
+      "puntaje": 90,
+      "comentario": "Vino con taninos bien marcados y notas a madera.",
       "esPremium": true
     }
   ]

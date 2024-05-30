@@ -39,6 +39,7 @@ namespace PPAI_G13_3K4.Clases
             this.regioneVit = new List<RegionVitivinicola>();
             this.vino = new List<Vino>();
             this.pantalla = pantalla;
+            this.interfazExcel = new InterfazExcel();
         }
        
         public void opcGenerarRankVinos()
@@ -119,7 +120,7 @@ namespace PPAI_G13_3K4.Clases
         }
         public void finCU()
         {
-            pantalla.Close();
+            pantalla.WindowState = FormWindowState.Minimized;
         }
     }
 }
