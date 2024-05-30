@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -39,12 +40,14 @@ namespace PPAI_G13_3K4.Clases
         {
             return precioARS;
         }
-        public void obtenerVarietal()
+        public List<string> obtenerVarietal()
         {
+            List<string> descVarietales = new List<string>();
             foreach (Varietal varietal in varietal)
             {
-                varietal.getDescripcion();
+                descVarietales.Add(varietal.getDescripcion());
             }
+            return descVarietales;
         }
         public float calcularPromedioPuntaje(float puntajes)
         {
@@ -76,10 +79,11 @@ namespace PPAI_G13_3K4.Clases
             }
             return result;
         }
-        public void buscarDatosBodega()
+        public List<string> buscarDatosBodega()
         {
-            bodega.getNombre();
-            bodega.obtenerRegionPais();
+            string nomBodega = bodega.getNombre();
+            List<string> datosRegPais = bodega.obtenerRegionPais();
+            return new List<string> { nomBodega, datosRegPais[0], datosRegPais[1]};
         }
 
     }

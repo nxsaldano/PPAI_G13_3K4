@@ -23,6 +23,7 @@ namespace PPAI_G13_3K4.Clases
         public List<Pais> paises { get; set; }
         public List<RegionVitivinicola> regioneVit { get; set; }
         public List<Vino> vino { get; set; }
+        public List<(string nombre, float puntajePromSom, float precioSugerido, string bodega, List<string> varietales, string region, string pais)> vinosRankingExcel{ get; set; }
         private PantallaGenerarRanking pantalla;
         private InterfazExcel interfazExcel;
 
@@ -40,6 +41,7 @@ namespace PPAI_G13_3K4.Clases
             this.vino = new List<Vino>();
             this.pantalla = pantalla;
             this.interfazExcel = new InterfazExcel();
+            this.vinosRankingExcel = new List<(string, float, float, string, List<string>, string, string)>();
         }
        
         public void opcGenerarRankVinos()
@@ -95,6 +97,7 @@ namespace PPAI_G13_3K4.Clases
         {
             foreach (Vino vino in vinosFiltrados)
             {
+               
                 vinosPuntajeSom.Add((vino, vino.obtenerPuntajePromedio(fechaDesdeSeleccionada, fechaHastaSeleccionada)));
             }
             
@@ -106,17 +109,24 @@ namespace PPAI_G13_3K4.Clases
         public void buscarDatosDiezMejoresVinos()
         {
 
+
             for (int i = 0; i < 10; i++)
             {
-                vinosPuntajeSom[i].vino.getNombre();
-                vinosPuntajeSom[i].vino.getPrecio();
-                vinosPuntajeSom[i].vino.buscarDatosBodega();
+                string nom = vinosPuntajeSom[i].vino.getNombre();
+                float calSom = vinosPuntajeSom[i].puntajePromSom;
+                float precSug = vinosPuntajeSom[i].vino.getPrecio();
+                List<string> datosBodega = vinosPuntajeSom[i].vino.buscarDatosBodega();
+                string bodega = datosBodega[0];
+                string region = datosBodega[1];
+                string pais = datosBodega[2];
+                List<string> varietales = vinosPuntajeSom[i].vino.obtenerVarietal();
+                vinosRankingExcel.Add((nom, calSom, precSug, bodega, varietales, region, pais));
             }
         }
         public void generarReporteExcel()
         {
             pantalla.informarGeneracionExitosa();
-            interfazExcel.exportarExcel();
+            interfazExcel.exportarExcel(this.vinosRankingExcel);
         }
         public void finCU()
         {

@@ -1,0 +1,14 @@
+C:\Users\Victus\Desktop\UTN\DSI\PPAI\PPAI_G13_3K4\PPAI_G13_3K4\bin\Release\PPAI_G13_3K4.exe.config
+C:\Users\Victus\Desktop\UTN\DSI\PPAI\PPAI_G13_3K4\PPAI_G13_3K4\bin\Release\PPAI_G13_3K4.exe
+C:\Users\Victus\Desktop\UTN\DSI\PPAI\PPAI_G13_3K4\PPAI_G13_3K4\bin\Release\PPAI_G13_3K4.pdb
+C:\Users\Victus\Desktop\UTN\DSI\PPAI\PPAI_G13_3K4\PPAI_G13_3K4\bin\Release\Newtonsoft.Json.dll
+C:\Users\Victus\Desktop\UTN\DSI\PPAI\PPAI_G13_3K4\PPAI_G13_3K4\bin\Release\Newtonsoft.Json.xml
+C:\Users\Victus\Desktop\UTN\DSI\PPAI\PPAI_G13_3K4\PPAI_G13_3K4\obj\Release\PPAI_G13_3K4.csproj.AssemblyReference.cache
+C:\Users\Victus\Desktop\UTN\DSI\PPAI\PPAI_G13_3K4\PPAI_G13_3K4\obj\Release\PPAI_G13_3K4.PantallaGenerarRanking.resources
+C:\Users\Victus\Desktop\UTN\DSI\PPAI\PPAI_G13_3K4\PPAI_G13_3K4\obj\Release\PPAI_G13_3K4.Properties.Resources.resources
+C:\Users\Victus\Desktop\UTN\DSI\PPAI\PPAI_G13_3K4\PPAI_G13_3K4\obj\Release\PPAI_G13_3K4.csproj.GenerateResource.cache
+C:\Users\Victus\Desktop\UTN\DSI\PPAI\PPAI_G13_3K4\PPAI_G13_3K4\obj\Release\PPAI_G13_3K4.csproj.CoreCompileInputs.cache
+C:\Users\Victus\Desktop\UTN\DSI\PPAI\PPAI_G13_3K4\PPAI_G13_3K4\obj\Release\PPAI_G13.3594DF85.Up2Date
+C:\Users\Victus\Desktop\UTN\DSI\PPAI\PPAI_G13_3K4\PPAI_G13_3K4\obj\Release\PPAI_G13_3K4.exe
+C:\Users\Victus\Desktop\UTN\DSI\PPAI\PPAI_G13_3K4\PPAI_G13_3K4\obj\Release\PPAI_G13_3K4.pdb
+C:\Users\Victus\Desktop\UTN\DSI\PPAI\PPAI_G13_3K4\PPAI_G13_3K4\obj\Release\PPAI_G13_3K4.Pantalla.InterfazExcel.resources
