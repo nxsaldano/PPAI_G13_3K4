@@ -105,7 +105,11 @@ namespace PPAI_G13_3K4
                 Application.Exit();
             }
         }
+        public void informarGeneracionExitosa()
+        {
+            DialogResult opcion = MessageBox.Show("Reporte generado con exito");
 
+        }
         private void btnGenerarRankingVinos_Click(object sender, EventArgs e)
         {
             btnGenerarRankingVinos.Visible = false;

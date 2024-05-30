@@ -66,6 +66,7 @@ namespace PPAI_G13_3K4
             // 
             // fechaDesde
             // 
+            this.fechaDesde.Checked = false;
             this.fechaDesde.Location = new System.Drawing.Point(25, 75);
             this.fechaDesde.Name = "fechaDesde";
             this.fechaDesde.Size = new System.Drawing.Size(275, 22);

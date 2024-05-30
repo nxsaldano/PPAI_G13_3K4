@@ -39,18 +39,12 @@ namespace PPAI_G13_3K4.Clases
         {
             return precioARS;
         }
-        public string obtenerVarietal()
+        public void obtenerVarietal()
         {
-            string varietal = "";
-            foreach (var item in this.varietal)
+            foreach (Varietal varietal in varietal)
             {
-                varietal += item.getDescripcion() + " ";
+                varietal.getDescripcion();
             }
-            return varietal;
-        }
-        public string obtenerDatosBodega()
-        {
-            return bodega.getNombre();
         }
         public float calcularPromedioPuntaje(float puntajes)
         {
@@ -69,21 +63,24 @@ namespace PPAI_G13_3K4.Clases
             }
             return calcularPromedioPuntaje(puntajes);
         }
-        public string verificarReseñasEnPeriodoDeSom()
+        public bool verificarReseñasEnPeriodoDeSom(DateTime fechaDesde, DateTime fechaHasta)
         {
-            string res = "";
-            foreach (var item in reseña)
+            bool result = false;
+            foreach (Reseña reseña in reseña)
             {
-                if (item.fechaReseña.Year == 2021)
+                if (reseña.sosDePeriodo(fechaDesde, fechaHasta) && reseña.sosDeSommelier())
                 {
-                    res = "Si";
-                }
-                else
-                {
-                    res = "No";
+                    result=true;
+                    break;
                 }
             }
-            return res;
+            return result;
         }
+        public void buscarDatosBodega()
+        {
+            bodega.getNombre();
+            bodega.obtenerRegionPais();
+        }
+
     }
 }

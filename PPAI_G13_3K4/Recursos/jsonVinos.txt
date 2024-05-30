@@ -1,3 +1,4 @@
+[
 {
   "nombre": "Cabernet Sauvignon Reserva",
   "precioARS": 1400.75,
@@ -32,9 +33,15 @@
       "puntaje": 90,
       "comentario": "Vino con taninos bien marcados y notas a madera.",
       "esPremium": true
+    }, 
+    {
+      "fechaReseña": "2024-05-22T00:00:00",
+      "puntaje": 90,
+      "comentario": "Vino con taninos bien marcados y notas a madera.",
+      "esPremium": true
     }
   ]
-}
+},
 
 {
   "nombre": "Syrah Gran Reserva",
@@ -70,9 +77,14 @@
       "puntaje": 93,
       "comentario": "Excelente estructura y notas especiadas.",
       "esPremium": true
+    },    {
+      "fechaReseña": "2024-05-22T00:00:00",
+      "puntaje": 90,
+      "comentario": "Vino con taninos bien marcados y notas a madera.",
+      "esPremium": true
     }
   ]
-}
+},
 
 {
   "nombre": "Chardonnay Clásico",
@@ -108,9 +120,15 @@
       "puntaje": 88,
       "comentario": "Refrescante, con notas cítricas y un toque de roble.",
       "esPremium": false
+    },   
+    {
+      "fechaReseña": "2024-05-22T00:00:00",
+      "puntaje": 90,
+      "comentario": "Vino con taninos bien marcados y notas a madera.",
+      "esPremium": true
     }
   ]
-}
+},
 
 {
   "nombre": "Merlot Reserva",
@@ -146,9 +164,15 @@
       "puntaje": 89,
       "comentario": "Suave y elegante, con notas de cereza.",
       "esPremium": false
+    },
+    {
+      "fechaReseña": "2024-05-22T00:00:00",
+      "puntaje": 90,
+      "comentario": "Vino con taninos bien marcados y notas a madera.",
+      "esPremium": true
     }
   ]
-}
+},
 
 {
   "nombre": "Pinot Noir Clásico",
@@ -184,9 +208,15 @@
       "puntaje": 91,
       "comentario": "Elegante, con notas de frutas rojas y especias.",
       "esPremium": true
+    },
+    {
+      "fechaReseña": "2024-05-22T00:00:00",
+      "puntaje": 90,
+      "comentario": "Vino con taninos bien marcados y notas a madera.",
+      "esPremium": true
     }
   ]
-}
+},
 
 {
   "nombre": "Torrontés Especial",
@@ -222,9 +252,15 @@
       "puntaje": 87,
       "comentario": "Aromático y fresco, ideal para el verano.",
       "esPremium": false
+    },
+    {
+      "fechaReseña": "2024-05-22T00:00:00",
+      "puntaje": 90,
+      "comentario": "Vino con taninos bien marcados y notas a madera.",
+      "esPremium": true
     }
   ]
-}
+},
 
 {
   "nombre": "Malbec Joven",
@@ -260,9 +296,15 @@
       "puntaje": 85,
       "comentario": "Fresco y afrutado, perfecto para diario.",
       "esPremium": false
+    },
+    {
+      "fechaReseña": "2024-05-22T00:00:00",
+      "puntaje": 90,
+      "comentario": "Vino con taninos bien marcados y notas a madera.",
+      "esPremium": true
     }
   ]
-}
+},
 
 {
   "nombre": "Tempranillo Reserva",
@@ -300,7 +342,7 @@
       "esPremium": true
     }
   ]
-}
+},
 
 {
   "nombre": "Sauvignon Blanc Clásico",
@@ -338,7 +380,7 @@
       "esPremium": false
     }
   ]
-}
+},
 
 {
   "nombre": "Bonarda Clásico",
@@ -376,7 +418,7 @@
       "esPremium": false
     }
   ]
-}
+},
 
 {
   "nombre": "Petit Verdot Reserva",
@@ -414,7 +456,7 @@
       "esPremium": true
     }
   ]
-}
+},
 
 {
   "nombre": "Tempranillo Crianza",
@@ -452,7 +494,7 @@
       "esPremium": true
     }
   ]
-}
+},
 
 {
   "nombre": "Garnacha Clásico",
@@ -490,7 +532,7 @@
       "esPremium": false
     }
   ]
-}
+},
 
 {
   "nombre": "Malbec Premium",
@@ -528,7 +570,7 @@
       "esPremium": true
     }
   ]
-}
+},
 
 
 {
@@ -568,3 +610,4 @@
     }
   ]
 }
+]

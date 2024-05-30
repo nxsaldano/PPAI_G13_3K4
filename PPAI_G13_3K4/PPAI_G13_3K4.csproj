@@ -57,6 +57,12 @@
     <Compile Include="Clases\Reseña.cs" />
     <Compile Include="Clases\Varietal.cs" />
     <Compile Include="Clases\Vino.cs" />
+    <Compile Include="Pantalla\InterfazExcel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantalla\InterfazExcel.Designer.cs">
+      <DependentUpon>InterfazExcel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pantalla\PantallaGenerarRanking.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,6 +71,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Pantalla\InterfazExcel.resx">
+      <DependentUpon>InterfazExcel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pantalla\PantallaGenerarRanking.resx">
       <DependentUpon>PantallaGenerarRanking.cs</DependentUpon>
     </EmbeddedResource>

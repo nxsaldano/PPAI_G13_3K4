@@ -26,9 +26,10 @@ namespace PPAI_G13_3K4.Clases
             return nombre;
         }
 
-        public string obtenerRegionPais()
+        public void obtenerRegionPais()
         {
-            return region.getNombrePais();
+            region.getNombre();
+            region.getNombrePais();
         }
     }
 }
