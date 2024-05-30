@@ -30,6 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.excelRankingVinos = new System.Windows.Forms.DataGridView();
+            this.ranking = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomVino = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.califSommelier = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precioSug = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,6 +55,7 @@
             // 
             this.excelRankingVinos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.excelRankingVinos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ranking,
             this.nomVino,
             this.califSommelier,
             this.precioSug,
@@ -67,11 +69,17 @@
             this.excelRankingVinos.RowTemplate.Height = 24;
             this.excelRankingVinos.Size = new System.Drawing.Size(750, 375);
             this.excelRankingVinos.TabIndex = 1;
-            this.excelRankingVinos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.excelRankingVinos_CellContentClick);
+            // 
+            // ranking
+            // 
+            this.ranking.HeaderText = "Ranking";
+            this.ranking.MinimumWidth = 6;
+            this.ranking.Name = "ranking";
+            this.ranking.ReadOnly = true;
+            this.ranking.Width = 125;
             // 
             // nomVino
             // 
-            this.nomVino.Frozen = true;
             this.nomVino.HeaderText = "Nombre";
             this.nomVino.MinimumWidth = 6;
             this.nomVino.Name = "nomVino";
@@ -146,6 +154,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView excelRankingVinos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ranking;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomVino;
         private System.Windows.Forms.DataGridViewTextBoxColumn califSommelier;
         private System.Windows.Forms.DataGridViewTextBoxColumn precioSug;

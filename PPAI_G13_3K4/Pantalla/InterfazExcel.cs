@@ -31,7 +31,7 @@ namespace PPAI_G13_3K4.Pantalla
                 string region = (vinosRankingExcel[i].Item6);
                 string pais = (vinosRankingExcel[i].Item7);
 
-                excelRankingVinos.Rows.Add(nom, calSom, precSug, bod, var, region, pais);
+                excelRankingVinos.Rows.Add(i+1,nom, calSom, precSug, bod, var, region, pais);
             }
             
                 this.Show();
