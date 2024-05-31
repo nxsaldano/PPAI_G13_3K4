@@ -36,20 +36,5 @@ namespace PPAI_G13_3K4.Pantalla
             
                 this.Show();
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void InterfazExcel_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void excelRankingVinos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }

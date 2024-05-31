@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PPAI_G13_3K4.Clases
 {
@@ -67,6 +68,7 @@ namespace PPAI_G13_3K4.Clases
             }
             return calcularPromedioPuntaje(puntajes, deSom);
         }
+
         public bool verificarReseñasEnPeriodoDeSom(DateTime fechaDesde, DateTime fechaHasta)
         {
             bool result = false;
@@ -80,6 +82,7 @@ namespace PPAI_G13_3K4.Clases
             }
             return result;
         }
+
         public List<string> buscarDatosBodega()
         {
             string nomBodega = bodega.getNombre();

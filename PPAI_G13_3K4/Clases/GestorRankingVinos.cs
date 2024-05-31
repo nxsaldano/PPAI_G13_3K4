@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using PPAI_G13_3K4;
 using Newtonsoft.Json;
 using PPAI_G13_3K4.Pantalla;
+
 namespace PPAI_G13_3K4.Clases
 {
     internal class GestorRankingVinos
@@ -48,26 +49,31 @@ namespace PPAI_G13_3K4.Clases
         {
             pantalla.solicitarFechaDesdeHasta();
         }
+
         public void tomarFechaDesdeRanking(DateTime fechaDesde)
         {
             fechaDesdeSeleccionada = fechaDesde;
         }
+
         public void tomarFechaHastaRanking(DateTime fechaHasta)
         {
             fechaHastaSeleccionada = fechaHasta;
             pantalla.solicitarTipoReseña();
         }
+
         public void tomarTipoReseña(string tipoReseña)
         {
             tipoReseñaSeleccionada = tipoReseña;
             pantalla.mostrarFormasVisualizacion();
             pantalla.solicitarFormaVisualizacion();
         }
+
         public void tomarFormaVisualizacion(string formaVis)
         {
             formasVisualizacion = formaVis;
             pantalla.solicitarConfirmacionReporte();
         }
+
         public void tomarConfirmacionReporte()
         {
             buscarVinosReseñaEnPeriodoDeSom();
@@ -77,12 +83,14 @@ namespace PPAI_G13_3K4.Clases
             generarReporteExcel();
             finCU();
         }
+
         public void buscarVinosReseñaEnPeriodoDeSom()
         {
-            string filePath = "..\\..\\Recursos\\jsonVinos.txt"; // Reemplaza con la ruta correcta del archivo
+            string filePath = "..\\..\\Recursos\\jsonVinos.txt"; 
             string jsonContent = File.ReadAllText(filePath);
-            // Deserializar el contenido JSON en una lista de objetos Vino
+            // se convierte el string JSON a una lista de objetos de tipo "Vino"
             vino = JsonConvert.DeserializeObject<List<Vino>>(jsonContent);
+
             foreach (Vino vino in vino)
             {
                 if (vino.verificarReseñasEnPeriodoDeSom(fechaDesdeSeleccionada, fechaHastaSeleccionada))
@@ -91,21 +99,28 @@ namespace PPAI_G13_3K4.Clases
                 }
 
             }
+
+            if (vinosFiltrados.Count == 0)
+            {
+                MessageBox.Show("No se encontraron reseñas creadas por Sommeliers en este periodo.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Restart();
+            }
+            
         }
 
         public void calcularPuntajeProm()
         {
             foreach (Vino vino in vinosFiltrados)
             {
-               
                 vinosPuntajeSom.Add((vino, vino.obtenerPuntajePromedio(fechaDesdeSeleccionada, fechaHastaSeleccionada)));
             }
-            
         }
+
         public void ordenarSegunPuntajePromedio()
         {
             vinosPuntajeSom = vinosPuntajeSom.OrderByDescending(v => v.puntajePromSom).ToList();
         }
+
         public void buscarDatosDiezMejoresVinos()
         {
 
@@ -123,11 +138,13 @@ namespace PPAI_G13_3K4.Clases
                 vinosRankingExcel.Add((nom, calSom, precSug, bodega, varietales, region, pais));
             }
         }
+
         public void generarReporteExcel()
         {
             pantalla.informarGeneracionExitosa();
             interfazExcel.exportarExcel(this.vinosRankingExcel);
         }
+
         public void finCU()
         {
             pantalla.WindowState = FormWindowState.Minimized;
