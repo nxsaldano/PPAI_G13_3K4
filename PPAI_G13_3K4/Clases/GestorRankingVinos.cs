@@ -77,13 +77,37 @@ namespace PPAI_G13_3K4.Clases
         public void tomarConfirmacionReporte()
         {
             buscarVinosReseñaEnPeriodoDeSom();
-            calcularPuntajeProm();
-            ordenarSegunPuntajePromedio();
-            buscarDatosDiezMejoresVinos();
-            generarReporteExcel();
-            finCU();
-        }
+            if (vinosFiltrados.Count == 0)
+            {
+                pantalla.mostrarMensajeError("No se encontraron reseñas creadas por Sommeliers en este periodo.");
 
+            }
+            else if (!chequearBodegasExistentes(vinosFiltrados))
+            {
+                pantalla.mostrarMensajeError("No existen bodegas registradas");
+            }
+            else
+            {
+                calcularPuntajeProm();
+                ordenarSegunPuntajePromedio();
+                buscarDatosDiezMejoresVinos();
+                generarReporteExcel();
+                finCU();
+            }
+            
+ 
+        }
+        public bool chequearBodegasExistentes(List<Vino> listaVinos)//AGREGAR METODO
+        {
+            foreach (Vino vino in listaVinos)
+            {
+                if (vino.existeBodega())
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
         public void buscarVinosReseñaEnPeriodoDeSom()
         {
             string filePath = "..\\..\\Recursos\\jsonVinos.txt"; 
@@ -100,11 +124,7 @@ namespace PPAI_G13_3K4.Clases
 
             }
 
-            if (vinosFiltrados.Count == 0)
-            {
-                MessageBox.Show("No se encontraron reseñas creadas por Sommeliers en este periodo.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Application.Restart();
-            }
+
             
         }
 
@@ -123,7 +143,6 @@ namespace PPAI_G13_3K4.Clases
 
         public void buscarDatosDiezMejoresVinos()
         {
-
 
             for (int i = 0; i < 10; i++)
             {

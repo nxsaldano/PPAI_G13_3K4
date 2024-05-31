@@ -157,5 +157,12 @@ namespace PPAI_G13_3K4
                 }
             }
         }
+
+        public void mostrarMensajeError(string msg)//AGREGAR METODO
+        {
+            MessageBox.Show(msg, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            Application.Restart();
+        }
+
     }
 }

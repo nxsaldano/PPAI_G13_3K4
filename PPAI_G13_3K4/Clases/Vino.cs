@@ -32,7 +32,10 @@ namespace PPAI_G13_3K4.Clases
             this.varietal = varietal;
             this.reseña = reseña;
         }
-
+        public bool existeBodega()//AGREGAR METODO
+        {
+            return bodega!=null;
+        }
         public string getNombre()
         {
             return nombre;
