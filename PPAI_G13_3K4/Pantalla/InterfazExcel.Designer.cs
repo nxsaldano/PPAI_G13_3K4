@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InterfazExcel));
             this.lblRanking = new System.Windows.Forms.Label();
             this.excelRankingVinos = new System.Windows.Forms.DataGridView();
             this.ranking = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,11 +64,11 @@
             this.varietal,
             this.region,
             this.pais});
-            this.excelRankingVinos.Location = new System.Drawing.Point(25, 50);
+            this.excelRankingVinos.Location = new System.Drawing.Point(12, 44);
             this.excelRankingVinos.Name = "excelRankingVinos";
             this.excelRankingVinos.RowHeadersWidth = 51;
             this.excelRankingVinos.RowTemplate.Height = 24;
-            this.excelRankingVinos.Size = new System.Drawing.Size(1050, 350);
+            this.excelRankingVinos.Size = new System.Drawing.Size(1553, 413);
             this.excelRankingVinos.TabIndex = 1;
             // 
             // ranking
@@ -112,11 +113,12 @@
             // 
             // varietal
             // 
+            this.varietal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.varietal.HeaderText = "Varietal";
             this.varietal.MinimumWidth = 6;
             this.varietal.Name = "varietal";
             this.varietal.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.varietal.Width = 125;
+            this.varietal.Width = 82;
             // 
             // region
             // 
@@ -139,9 +141,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1101, 424);
+            this.ClientSize = new System.Drawing.Size(1585, 494);
             this.Controls.Add(this.excelRankingVinos);
             this.Controls.Add(this.lblRanking);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "InterfazExcel";
             this.Text = "InterfazExcel";
             ((System.ComponentModel.ISupportInitialize)(this.excelRankingVinos)).EndInit();

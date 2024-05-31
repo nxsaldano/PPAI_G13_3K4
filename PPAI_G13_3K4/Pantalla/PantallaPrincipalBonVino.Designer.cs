@@ -34,7 +34,7 @@
             // btnGenerarRankingVinos
             // 
             this.btnGenerarRankingVinos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGenerarRankingVinos.Location = new System.Drawing.Point(251, 295);
+            this.btnGenerarRankingVinos.Location = new System.Drawing.Point(348, 312);
             this.btnGenerarRankingVinos.Margin = new System.Windows.Forms.Padding(4);
             this.btnGenerarRankingVinos.Name = "btnGenerarRankingVinos";
             this.btnGenerarRankingVinos.Size = new System.Drawing.Size(224, 58);
@@ -47,6 +47,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::PPAI_G13_3K4.Properties.Resources.Captura_de_pantalla_2024_05_27_220325;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnGenerarRankingVinos);
             this.Name = "PantallaPrincipalBonVino";
