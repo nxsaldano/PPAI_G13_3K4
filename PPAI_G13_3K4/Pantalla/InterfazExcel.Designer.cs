@@ -50,7 +50,6 @@
             this.label1.Size = new System.Drawing.Size(238, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Ranking de los 10 mejores Vinos:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // excelRankingVinos
             // 
@@ -145,7 +144,6 @@
             this.Controls.Add(this.label1);
             this.Name = "InterfazExcel";
             this.Text = "InterfazExcel";
-            this.Load += new System.EventHandler(this.InterfazExcel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.excelRankingVinos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
