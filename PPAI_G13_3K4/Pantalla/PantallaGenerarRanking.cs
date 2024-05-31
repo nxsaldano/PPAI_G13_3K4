@@ -80,47 +80,6 @@ namespace PPAI_G13_3K4
             cmbTipoReseña.Visible = true;
             MessageBox.Show("Seleccionar el tipo de reseña.");
         }
-
-
-
-        public void mostrarFormasVisualizacion()
-        {
-            lblFormasVisReporte.Visible = true;
-            cmbFormasVisReporte.Visible = true;
-        }
-
-        public void solicitarFormaVisualizacion()
-        {
-            MessageBox.Show("Seleccionar la forma de visualización.");
-        }
-
-
-
-        public void solicitarConfirmacionReporte()
-        {
-            msgBoxConfirmacion.Visible = true;
-        }
-        private void tomarConfirmacionReporte(object sender, EventArgs e)
-        {
-            gestor.tomarConfirmacionReporte();
-            msgBoxConfirmacion.Visible = false;
-
-
-        }
-
-        private void tomarCancelacionReporte(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-        public void informarGeneracionExitosa()
-        {
-            DialogResult opcion = MessageBox.Show("Reporte generado con exito");
-
-        }
-
-
-
-
         private void tomarTipoReseña(object sender, EventArgs e)
         {
             if (cmbTipoReseña.SelectedItem != null)
@@ -133,6 +92,17 @@ namespace PPAI_G13_3K4
             }
         }
 
+
+        public void mostrarFormasVisualizacion()
+        {
+            lblFormasVisReporte.Visible = true;
+            cmbFormasVisReporte.Visible = true;
+        }
+
+        public void solicitarFormaVisualizacion()
+        {
+            MessageBox.Show("Seleccionar la forma de visualización.");
+        }
         private void tomarFormaVisualizacion(object sender, EventArgs e)
         {
             if (cmbFormasVisReporte.SelectedItem != null)
@@ -144,7 +114,26 @@ namespace PPAI_G13_3K4
                 }
             }
         }
+        public void solicitarConfirmacionReporte()
+        {
+            msgBoxConfirmacion.Visible = true;
+        }
+        private void tomarConfirmacionReporte(object sender, EventArgs e)
+        {
+            gestor.tomarConfirmacionReporte();
+            msgBoxConfirmacion.Visible = false;
 
+
+        }
+        private void tomarCancelacionReporte(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+        public void informarGeneracionExitosa()
+        {
+            DialogResult opcion = MessageBox.Show("Reporte generado con exito");
+
+        }
         public void mostrarMensajeError(string msg)//AGREGAR METODO
         {
             MessageBox.Show(msg, "", MessageBoxButtons.OK, MessageBoxIcon.Error);

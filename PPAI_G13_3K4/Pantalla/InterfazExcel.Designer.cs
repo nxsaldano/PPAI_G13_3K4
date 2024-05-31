@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblRanking = new System.Windows.Forms.Label();
             this.excelRankingVinos = new System.Windows.Forms.DataGridView();
             this.ranking = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomVino = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,15 +41,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.excelRankingVinos)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // lblRanking
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(25, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(238, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Ranking de los 10 mejores Vinos:";
+            this.lblRanking.AutoSize = true;
+            this.lblRanking.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRanking.Location = new System.Drawing.Point(25, 25);
+            this.lblRanking.Name = "lblRanking";
+            this.lblRanking.Size = new System.Drawing.Size(238, 16);
+            this.lblRanking.TabIndex = 0;
+            this.lblRanking.Text = "Ranking de los 10 mejores Vinos:";
             // 
             // excelRankingVinos
             // 
@@ -141,7 +141,7 @@
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1101, 424);
             this.Controls.Add(this.excelRankingVinos);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblRanking);
             this.Name = "InterfazExcel";
             this.Text = "InterfazExcel";
             ((System.ComponentModel.ISupportInitialize)(this.excelRankingVinos)).EndInit();
@@ -152,7 +152,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblRanking;
         private System.Windows.Forms.DataGridView excelRankingVinos;
         private System.Windows.Forms.DataGridViewTextBoxColumn ranking;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomVino;

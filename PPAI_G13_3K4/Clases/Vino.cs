@@ -14,7 +14,7 @@ namespace PPAI_G13_3K4.Clases
         public float precioARS { get; set; }
         public int añada { get; set; }
         public DateTime fechaActualizacion { get; set; }
-        public string imgenEtiqueta { get; set; }
+        public string imagenEtiqueta { get; set; }
         public float notaDeCataBodega { get; set; }
         public Bodega bodega { get; set; }
         public List<Varietal> varietal { get; set; }
@@ -26,7 +26,7 @@ namespace PPAI_G13_3K4.Clases
             this.precioARS = precioARS;
             this.añada = añada;
             this.fechaActualizacion = fechaActualizacion;
-            this.imgenEtiqueta = imgenEtiqueta;
+            this.imagenEtiqueta = imgenEtiqueta;
             this.notaDeCataBodega = notaDeCataBodega;
             this.bodega = bodega;
             this.varietal = varietal;
@@ -45,7 +45,7 @@ namespace PPAI_G13_3K4.Clases
             }
             return result;
         }
-        public bool existeBodega()//AGREGAR METODO
+        public bool existeBodega()
         {
             return bodega!=null;
         }
@@ -63,13 +63,15 @@ namespace PPAI_G13_3K4.Clases
             }
             return calcularPromedioPuntaje(puntajes, deSom);
         }
-        public string getNombre()
+        public float calcularPromedioPuntaje(float puntajes, float deSom)
         {
-            return nombre;
+            return puntajes / deSom;
         }
-        public float getPrecio()
+        public List<string> buscarDatosBodega()
         {
-            return precioARS;
+            string nomBodega = bodega.getNombre();
+            List<string> datosRegPais = bodega.obtenerRegionPais();
+            return new List<string> { nomBodega, datosRegPais[0], datosRegPais[1] };
         }
         public List<string> obtenerVarietal()
         {
@@ -80,20 +82,13 @@ namespace PPAI_G13_3K4.Clases
             }
             return descVarietales;
         }
-        public float calcularPromedioPuntaje(float puntajes, float deSom)
+        public string getNombre()
         {
-            return puntajes/deSom;
+            return nombre;
         }
-
-
-
-
-        public List<string> buscarDatosBodega()
+        public float getPrecio()
         {
-            string nomBodega = bodega.getNombre();
-            List<string> datosRegPais = bodega.obtenerRegionPais();
-            return new List<string> { nomBodega, datosRegPais[0], datosRegPais[1]};
+            return precioARS;
         }
-
     }
 }
