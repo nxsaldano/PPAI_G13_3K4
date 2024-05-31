@@ -23,7 +23,7 @@ namespace PPAI_G13_3K4.Clases
         public List<Pais> paises { get; set; }
         public List<RegionVitivinicola> regioneVit { get; set; }
         public List<Vino> vino { get; set; }
-        public List<(string nombre, float puntajePromSom, float precioSugerido, string bodega, List<string> varietales, string region, string pais)> vinosRankingExcel { get; set; }
+        public List<(string nombre, float puntajePromSom, float precioSugerido, string bodega, List<string> varietales, string region, string pais)> vinosRankingExcel{ get; set; }
         private PantallaGenerarRanking pantalla;
         private InterfazExcel interfazExcel;
 
@@ -33,7 +33,7 @@ namespace PPAI_G13_3K4.Clases
             this.fechaHastaSeleccionada = DateTime.Today;
             this.tipoReseñaSeleccionada = tipoReseñaSeleccionada;
             this.formasVisualizacion = formasVisualizacion;
-            this.vinosPuntajeSom = new List<(Vino, float)>();
+            this.vinosPuntajeSom = new List<(Vino,float)>();
             this.vinosFiltrados = new List<Vino>();
             this.bodegas = new List<Bodega>();
             this.paises = new List<Pais>();
@@ -43,7 +43,7 @@ namespace PPAI_G13_3K4.Clases
             this.interfazExcel = new InterfazExcel();
             this.vinosRankingExcel = new List<(string, float, float, string, List<string>, string, string)>();
         }
-
+       
         public void opcGenerarRankVinos()
         {
             pantalla.solicitarFechaDesdeHasta();
@@ -71,19 +71,11 @@ namespace PPAI_G13_3K4.Clases
         public void tomarConfirmacionReporte()
         {
             buscarVinosReseñaEnPeriodoDeSom();
-            if (vinosFiltrados.Count > 0)
-            {
-                calcularPuntajeProm();
-                ordenarSegunPuntajePromedio();
-                buscarDatosDiezMejoresVinos();
-                generarReporteExcel();
-                finCU();
-            }
-            else
-            {
-                pantalla.mensajeError("No se encontraron vinos en ese periodo");
-            }
-
+            calcularPuntajeProm();
+            ordenarSegunPuntajePromedio();
+            buscarDatosDiezMejoresVinos();
+            generarReporteExcel();
+            finCU();
         }
         public void buscarVinosReseñaEnPeriodoDeSom()
         {
@@ -103,13 +95,12 @@ namespace PPAI_G13_3K4.Clases
 
         public void calcularPuntajeProm()
         {
-
             foreach (Vino vino in vinosFiltrados)
             {
-
+               
                 vinosPuntajeSom.Add((vino, vino.obtenerPuntajePromedio(fechaDesdeSeleccionada, fechaHastaSeleccionada)));
             }
-
+            
         }
         public void ordenarSegunPuntajePromedio()
         {
