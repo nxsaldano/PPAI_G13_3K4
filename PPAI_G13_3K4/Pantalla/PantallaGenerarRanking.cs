@@ -80,6 +80,10 @@ namespace PPAI_G13_3K4
         {
             MessageBox.Show("Seleccionar la forma de visualización.");
         }
+        public void mostrarMensajeError(string message)
+        {
+        MessageBox.Show(message); 
+        }
 
         public void tomarFormaVisualizacion(string formaVis)
         {
