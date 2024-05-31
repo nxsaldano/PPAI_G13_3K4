@@ -49,22 +49,23 @@ namespace PPAI_G13_3K4.Clases
             }
             return descVarietales;
         }
-        public float calcularPromedioPuntaje(float puntajes)
+        public float calcularPromedioPuntaje(float puntajes, float deSom)
         {
-            return puntajes/reseña.Count;
+            return puntajes/deSom;
         }
         public float obtenerPuntajePromedio(DateTime fechaDesde, DateTime fechaHasta)
         {
-            float puntajes = 0;
+            float puntajes = 0, deSom = 0;
             foreach (Reseña reseña in reseña)
             {
                 if (reseña.sosDePeriodo(fechaDesde, fechaHasta)&& reseña.sosDeSommelier())
                 {
                     puntajes += reseña.getPuntaje();
+                    deSom += 1;
                 }
 
             }
-            return calcularPromedioPuntaje(puntajes);
+            return calcularPromedioPuntaje(puntajes, deSom);
         }
         public bool verificarReseñasEnPeriodoDeSom(DateTime fechaDesde, DateTime fechaHasta)
         {

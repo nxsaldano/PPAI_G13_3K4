@@ -9,7 +9,7 @@ namespace PPAI_G13_3K4.Clases
     internal class Reseña
     {
         public DateTime fechaReseña { get; set; }
-        public int puntaje { get; set; }
+        public float puntaje { get; set; }
         public string comentario { get; set; }
         public Boolean esPremium { get; set; }
         private Vino vino { get; set; }
@@ -23,7 +23,7 @@ namespace PPAI_G13_3K4.Clases
             this.vino = vino;
         }
 
-        public int getPuntaje()
+        public float getPuntaje()
         {
             return puntaje;
         }

@@ -30,7 +30,7 @@
   "reseña": [
     {
       "fechaReseña": "2023-11-22T00:00:00",
-      "puntaje": 90,
+      "puntaje": 80,
       "comentario": "Vino con taninos bien marcados y notas a madera.",
       "esPremium": true
     }, 
@@ -74,12 +74,12 @@
   "reseña": [
     {
       "fechaReseña": "2023-12-05T00:00:00",
-      "puntaje": 93,
+      "puntaje": 85,
       "comentario": "Excelente estructura y notas especiadas.",
       "esPremium": true
     },    {
       "fechaReseña": "2024-05-22T00:00:00",
-      "puntaje": 90,
+      "puntaje": 70,
       "comentario": "Vino con taninos bien marcados y notas a madera.",
       "esPremium": true
     }
@@ -123,7 +123,7 @@
     },   
     {
       "fechaReseña": "2024-05-22T00:00:00",
-      "puntaje": 90,
+      "puntaje": 65,
       "comentario": "Vino con taninos bien marcados y notas a madera.",
       "esPremium": true
     }
@@ -167,7 +167,7 @@
     },
     {
       "fechaReseña": "2024-05-22T00:00:00",
-      "puntaje": 90,
+      "puntaje": 70,
       "comentario": "Vino con taninos bien marcados y notas a madera.",
       "esPremium": true
     }
@@ -205,13 +205,13 @@
   "reseña": [
     {
       "fechaReseña": "2024-03-15T00:00:00",
-      "puntaje": 91,
+      "puntaje": 75,
       "comentario": "Elegante, con notas de frutas rojas y especias.",
       "esPremium": true
     },
     {
       "fechaReseña": "2024-05-22T00:00:00",
-      "puntaje": 90,
+      "puntaje": 60,
       "comentario": "Vino con taninos bien marcados y notas a madera.",
       "esPremium": true
     }
@@ -255,7 +255,7 @@
     },
     {
       "fechaReseña": "2024-05-22T00:00:00",
-      "puntaje": 90,
+      "puntaje": 71,
       "comentario": "Vino con taninos bien marcados y notas a madera.",
       "esPremium": true
     }
@@ -299,7 +299,7 @@
     },
     {
       "fechaReseña": "2024-05-22T00:00:00",
-      "puntaje": 90,
+      "puntaje": 78,
       "comentario": "Vino con taninos bien marcados y notas a madera.",
       "esPremium": true
     }
@@ -343,7 +343,7 @@
     },
     {
       "fechaReseña": "2024-05-22T00:00:00",
-      "puntaje": 90,
+      "puntaje": 68,
       "comentario": "Vino con taninos bien marcados y notas a madera.",
       "esPremium": true
     }
@@ -387,7 +387,7 @@
     },
     {
       "fechaReseña": "2024-05-22T00:00:00",
-      "puntaje": 90,
+      "puntaje": 80,
       "comentario": "Vino con taninos bien marcados y notas a madera.",
       "esPremium": true
     }
@@ -519,7 +519,7 @@
     },
     {
       "fechaReseña": "2024-05-22T00:00:00",
-      "puntaje": 90,
+      "puntaje": 70,
       "comentario": "Vino con taninos bien marcados y notas a madera.",
       "esPremium": true
     }

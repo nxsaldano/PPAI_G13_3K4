@@ -44,9 +44,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(25, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(206, 16);
+            this.label1.Size = new System.Drawing.Size(238, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Ranking de los 10 mejores Vinos:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -67,7 +68,7 @@
             this.excelRankingVinos.Name = "excelRankingVinos";
             this.excelRankingVinos.RowHeadersWidth = 51;
             this.excelRankingVinos.RowTemplate.Height = 24;
-            this.excelRankingVinos.Size = new System.Drawing.Size(750, 375);
+            this.excelRankingVinos.Size = new System.Drawing.Size(1050, 350);
             this.excelRankingVinos.TabIndex = 1;
             // 
             // ranking
@@ -138,7 +139,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(1101, 424);
             this.Controls.Add(this.excelRankingVinos);
             this.Controls.Add(this.label1);
             this.Name = "InterfazExcel";
