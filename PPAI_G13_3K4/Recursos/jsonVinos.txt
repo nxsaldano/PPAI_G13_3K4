@@ -24,20 +24,24 @@
   "varietal": [
     {
       "descripcion": "Cabernet Sauvignon",
-      "porcentajeComposicion": 100
+      "porcentajeComposicion": 85
+    }
+    {
+      "descripcion": "Malbec",
+      "porcentajeComposicion": 95
     }
   ],
   "reseña": [
     {
       "fechaReseña": "2023-11-22T00:00:00",
-      "puntaje": 80,
+      "puntaje": 95,
       "comentario": "Vino con taninos bien marcados y notas a madera.",
       "esPremium": true
     }, 
     {
       "fechaReseña": "2024-05-22T00:00:00",
-      "puntaje": 90,
-      "comentario": "Vino con taninos bien marcados y notas a madera.",
+      "puntaje": 85,
+      "comentario": "Vino elegante y potente para ocaciones especiales.",
       "esPremium": true
     }
   ]
@@ -68,19 +72,19 @@
   "varietal": [
     {
       "descripcion": "Syrah",
-      "porcentajeComposicion": 100
+      "porcentajeComposicion": 96
     }
   ],
   "reseña": [
     {
       "fechaReseña": "2023-12-05T00:00:00",
-      "puntaje": 85,
+      "puntaje": 93,
       "comentario": "Excelente estructura y notas especiadas.",
       "esPremium": true
     },    {
       "fechaReseña": "2024-05-22T00:00:00",
-      "puntaje": 70,
-      "comentario": "Vino con taninos bien marcados y notas a madera.",
+      "puntaje": 80,
+      "comentario": "Vino con taninos bien marcados y especiado.",
       "esPremium": true
     }
   ]
@@ -113,6 +117,11 @@
       "descripcion": "Chardonnay",
       "porcentajeComposicion": 100
     }
+    {
+      "descripcion": "Bonarda",
+      "porcentajeComposicion": 80
+    }
+    
   ],
   "reseña": [
     {
@@ -123,8 +132,8 @@
     },   
     {
       "fechaReseña": "2024-05-22T00:00:00",
-      "puntaje": 65,
-      "comentario": "Vino con taninos bien marcados y notas a madera.",
+      "puntaje": 90,
+      "comentario": "Vino pastoso y robusto.",
       "esPremium": true
     }
   ]
@@ -167,7 +176,7 @@
     },
     {
       "fechaReseña": "2024-05-22T00:00:00",
-      "puntaje": 70,
+      "puntaje": 90,
       "comentario": "Vino con taninos bien marcados y notas a madera.",
       "esPremium": true
     }
@@ -201,18 +210,22 @@
       "descripcion": "Pinot Noir",
       "porcentajeComposicion": 100
     }
+    {
+      "descripcion": "Chardonnay",
+      "porcentajeComposicion": 85
+    }
   ],
   "reseña": [
     {
       "fechaReseña": "2024-03-15T00:00:00",
-      "puntaje": 75,
+      "puntaje": 91,
       "comentario": "Elegante, con notas de frutas rojas y especias.",
       "esPremium": true
     },
     {
       "fechaReseña": "2024-05-22T00:00:00",
-      "puntaje": 60,
-      "comentario": "Vino con taninos bien marcados y notas a madera.",
+      "puntaje": 90,
+      "comentario": "Vino generoso e intenso.",
       "esPremium": true
     }
   ]
@@ -243,7 +256,7 @@
   "varietal": [
     {
       "descripcion": "Torrontés",
-      "porcentajeComposicion": 100
+      "porcentajeComposicion": 94
     }
   ],
   "reseña": [
@@ -255,8 +268,8 @@
     },
     {
       "fechaReseña": "2024-05-22T00:00:00",
-      "puntaje": 71,
-      "comentario": "Vino con taninos bien marcados y notas a madera.",
+      "puntaje": 94,
+      "comentario": "Dulce y suave para acompañar un postre.",
       "esPremium": true
     }
   ]
@@ -287,7 +300,11 @@
   "varietal": [
     {
       "descripcion": "Malbec",
-      "porcentajeComposicion": 100
+      "porcentajeComposicion": 97
+    }
+    {
+      "descripcion": "Pinot noir",
+      "porcentajeComposicion": 89
     }
   ],
   "reseña": [
@@ -299,8 +316,8 @@
     },
     {
       "fechaReseña": "2024-05-22T00:00:00",
-      "puntaje": 78,
-      "comentario": "Vino con taninos bien marcados y notas a madera.",
+      "puntaje": 90,
+      "comentario": "Robusto y con cuerpo para acompañar carnes rojas.",
       "esPremium": true
     }
   ]
@@ -331,7 +348,7 @@
   "varietal": [
     {
       "descripcion": "Tempranillo",
-      "porcentajeComposicion": 100
+      "porcentajeComposicion": 98
     }
   ],
   "reseña": [
@@ -343,8 +360,8 @@
     },
     {
       "fechaReseña": "2024-05-22T00:00:00",
-      "puntaje": 68,
-      "comentario": "Vino con taninos bien marcados y notas a madera.",
+      "puntaje": 98,
+      "comentario": "Vino Perfectamente límpido.",
       "esPremium": true
     }
   ]
@@ -377,6 +394,10 @@
       "descripcion": "Sauvignon Blanc",
       "porcentajeComposicion": 100
     }
+    {
+      "descripcion": "Torrontes",
+      "porcentajeComposicion": 93
+    }
   ],
   "reseña": [
     {
@@ -387,8 +408,8 @@
     },
     {
       "fechaReseña": "2024-05-22T00:00:00",
-      "puntaje": 80,
-      "comentario": "Vino con taninos bien marcados y notas a madera.",
+      "puntaje": 91,
+      "comentario": "Vino con cualidades bien marcadas y reconocibles.",
       "esPremium": true
     }
   ]
@@ -432,7 +453,13 @@
     {
       "fechaReseña": "2024-05-22T00:00:00",
       "puntaje": 90,
-      "comentario": "Vino con taninos bien marcados y notas a madera.",
+      "comentario": "Sensación de plenitud y textura suave..",
+      "esPremium": true
+    }
+    {
+      "fechaReseña": "2024-05-22T00:00:00",
+      "puntaje": 93,
+      "comentario": "Con una gran gama de sensaciones olfativas y gustativas.",
       "esPremium": true
     }
   ]
@@ -463,7 +490,11 @@
   "varietal": [
     {
       "descripcion": "Petit Verdot",
-      "porcentajeComposicion": 100
+      "porcentajeComposicion": 85
+    }
+    {
+      "descripcion": "Garnacha",
+      "porcentajeComposicion": 95
     }
   ],
   "reseña": [
@@ -476,7 +507,7 @@
     {
       "fechaReseña": "2024-05-22T00:00:00",
       "puntaje": 90,
-      "comentario": "Vino con taninos bien marcados y notas a madera.",
+      "comentario": "Fino y con clase; armonioso y sin impresiones agresivas.",
       "esPremium": true
     }
   ]
@@ -507,7 +538,7 @@
   "varietal": [
     {
       "descripcion": "Tempranillo",
-      "porcentajeComposicion": 100
+      "porcentajeComposicion": 99
     }
   ],
   "reseña": [
@@ -519,8 +550,8 @@
     },
     {
       "fechaReseña": "2024-05-22T00:00:00",
-      "puntaje": 70,
-      "comentario": "Vino con taninos bien marcados y notas a madera.",
+      "puntaje": 90,
+      "comentario": "Gustos y aromas que se prolongan después de degustar el vino.",
       "esPremium": true
     }
   ]
@@ -551,7 +582,7 @@
   "varietal": [
     {
       "descripcion": "Garnacha",
-      "porcentajeComposicion": 100
+      "porcentajeComposicion": 97
     }
   ],
   "reseña": [
@@ -630,12 +661,22 @@
       "descripcion": "Sangiovese",
       "porcentajeComposicion": 100
     }
+    {
+      "descripcion": "Barbera",
+      "porcentajeComposicion": 95
+    }
   ],
   "reseña": [
     {
       "fechaReseña": "2024-04-01T00:00:00",
       "puntaje": 89,
       "comentario": "Vibrante y frutal, con un toque de especias.",
+      "esPremium": false
+    }
+    {
+      "fechaReseña": "2024-04-01T00:00:00",
+      "puntaje": 85,
+      "comentario": " Con dominante ácida y afrutada.",
       "esPremium": false
     }
   ]
