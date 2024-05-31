@@ -25,7 +25,7 @@
     {
       "descripcion": "Cabernet Sauvignon",
       "porcentajeComposicion": 85
-    }
+    },
     {
       "descripcion": "Malbec",
       "porcentajeComposicion": 95
@@ -116,7 +116,7 @@
     {
       "descripcion": "Chardonnay",
       "porcentajeComposicion": 100
-    }
+    },
     {
       "descripcion": "Bonarda",
       "porcentajeComposicion": 80
@@ -209,7 +209,7 @@
     {
       "descripcion": "Pinot Noir",
       "porcentajeComposicion": 100
-    }
+    },
     {
       "descripcion": "Chardonnay",
       "porcentajeComposicion": 85
@@ -301,7 +301,7 @@
     {
       "descripcion": "Malbec",
       "porcentajeComposicion": 97
-    }
+    },
     {
       "descripcion": "Pinot noir",
       "porcentajeComposicion": 89
@@ -393,7 +393,7 @@
     {
       "descripcion": "Sauvignon Blanc",
       "porcentajeComposicion": 100
-    }
+    },
     {
       "descripcion": "Torrontes",
       "porcentajeComposicion": 93
@@ -455,7 +455,7 @@
       "puntaje": 90,
       "comentario": "Sensación de plenitud y textura suave..",
       "esPremium": true
-    }
+    },
     {
       "fechaReseña": "2024-05-22T00:00:00",
       "puntaje": 93,
@@ -491,7 +491,7 @@
     {
       "descripcion": "Petit Verdot",
       "porcentajeComposicion": 85
-    }
+    },
     {
       "descripcion": "Garnacha",
       "porcentajeComposicion": 95
@@ -660,7 +660,7 @@
     {
       "descripcion": "Sangiovese",
       "porcentajeComposicion": 100
-    }
+    },
     {
       "descripcion": "Barbera",
       "porcentajeComposicion": 95
@@ -672,7 +672,7 @@
       "puntaje": 89,
       "comentario": "Vibrante y frutal, con un toque de especias.",
       "esPremium": false
-    }
+    },
     {
       "fechaReseña": "2024-04-01T00:00:00",
       "puntaje": 85,

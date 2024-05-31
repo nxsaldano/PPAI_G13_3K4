@@ -110,7 +110,7 @@ namespace PPAI_G13_3K4.Clases
         }
         public void buscarVinosReseñaEnPeriodoDeSom()
         {
-            string filePath = "..\\..\\Recursos\\jsonVinos.txt"; 
+            string filePath = "..\\..\\Recursos\\jsonVinosSinBodega.txt"; 
             string jsonContent = File.ReadAllText(filePath);
             // se convierte el string JSON a una lista de objetos de tipo "Vino"
             vino = JsonConvert.DeserializeObject<List<Vino>>(jsonContent);

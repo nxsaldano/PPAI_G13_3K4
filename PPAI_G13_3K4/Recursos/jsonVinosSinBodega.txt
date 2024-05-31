@@ -1,0 +1,95 @@
+[
+{
+  "nombre": "Cabernet Sauvignon Reserva",
+  "precioARS": 1400.75,
+  "añada": 2017,
+  "fechaActualizacion": "2024-05-01T00:00:00",
+  "imagenEtiqueta": "url_de_la_imagen",
+  "notaDeCataBodega": 4.7,
+  "varietal": [
+    {
+      "descripcion": "Cabernet Sauvignon",
+      "porcentajeComposicion": 85
+    },
+    {
+      "descripcion": "Malbec",
+      "porcentajeComposicion": 95
+    }
+  ],
+  "reseña": [
+    {
+      "fechaReseña": "2023-11-22T00:00:00",
+      "puntaje": 95,
+      "comentario": "Vino con taninos bien marcados y notas a madera.",
+      "esPremium": true
+    }, 
+    {
+      "fechaReseña": "2024-05-22T00:00:00",
+      "puntaje": 85,
+      "comentario": "Vino elegante y potente para ocaciones especiales.",
+      "esPremium": true
+    }
+  ]
+},
+
+{
+  "nombre": "Syrah Gran Reserva",
+  "precioARS": 1600.00,
+  "añada": 2019,
+  "fechaActualizacion": "2024-04-15T00:00:00",
+  "imagenEtiqueta": "url_de_la_imagen",
+  "notaDeCataBodega": 4.8,
+  "varietal": [
+    {
+      "descripcion": "Syrah",
+      "porcentajeComposicion": 96
+    }
+  ],
+  "reseña": [
+    {
+      "fechaReseña": "2023-12-05T00:00:00",
+      "puntaje": 93,
+      "comentario": "Excelente estructura y notas especiadas.",
+      "esPremium": true
+    },    {
+      "fechaReseña": "2024-05-22T00:00:00",
+      "puntaje": 80,
+      "comentario": "Vino con taninos bien marcados y especiado.",
+      "esPremium": true
+    }
+  ]
+},
+
+{
+  "nombre": "Chardonnay Clásico",
+  "precioARS": 900.00,
+  "añada": 2020,
+  "fechaActualizacion": "2024-03-30T00:00:00",
+  "imagenEtiqueta": "url_de_la_imagen",
+  "notaDeCataBodega": 4.2,
+  "varietal": [
+    {
+      "descripcion": "Chardonnay",
+      "porcentajeComposicion": 100
+    },
+    {
+      "descripcion": "Bonarda",
+      "porcentajeComposicion": 80
+    }
+    
+  ],
+  "reseña": [
+    {
+      "fechaReseña": "2023-10-20T00:00:00",
+      "puntaje": 88,
+      "comentario": "Refrescante, con notas cítricas y un toque de roble.",
+      "esPremium": false
+    },   
+    {
+      "fechaReseña": "2024-05-22T00:00:00",
+      "puntaje": 90,
+      "comentario": "Vino pastoso y robusto.",
+      "esPremium": true
+    }
+  ]
+}
