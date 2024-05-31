@@ -14,33 +14,49 @@ namespace PPAI_G13_3K4
     public partial class PantallaGenerarRanking : Form
     {
         private GestorRankingVinos gestor;
-
         public PantallaGenerarRanking()
         {
             InitializeComponent();
 
             gestor = new GestorRankingVinos(this);
         }
-
-        public void solicitarFechaDesdeHasta()
+        //METODOS////////////////////////////////////////////////////////
+        public void opcGenerarRankVinos()
         {
-            fechaDesde.Visible = true;
-            fechaHasta.Visible = true;
+            habilitarPantalla();
+            gestor.opcGenerarRankVinos();
+        }
+        public void habilitarPantalla()
+        {
+            this.Show();
+        }
+
+        
+        public void solicitarFechaDesdeHastaRanking()
+        {
+            datePickerFechaDesde.Visible = true;
             lblFechaDesde.Visible = true;
+            datePickerFechaHasta.Visible = true;
             lblFechaHasta.Visible = true;
             lblPeriodo.Visible = true; 
         }
-
-        public void tomarFechaDesdeRanking(DateTime fechaDesde)
+       private void tomarFechaDesdeRanking(object sender, EventArgs e)
         {
-            gestor.tomarFechaDesdeRanking(fechaDesde);
+            bool validacion = this.validarFechas(datePickerFechaDesde.Value, datePickerFechaHasta.Value);
+            if (validacion)
+            {
+                gestor.tomarFechaDesdeRanking(datePickerFechaDesde.Value);
+            }
         }
 
-        public void tomarFechaHastaRanking(DateTime fechaHasta)
+        private void tomarFechaHastaRanking(object sender, EventArgs e)
         {
-            gestor.tomarFechaHastaRanking(fechaHasta);
+            bool validacion = this.validarFechas(datePickerFechaDesde.Value, datePickerFechaHasta.Value);
+            if (validacion)
+            {
+                gestor.tomarFechaHastaRanking(datePickerFechaHasta.Value);
+            };
         }
-
         public bool validarFechas(DateTime desde, DateTime hasta)
         {
             if (desde > hasta)
@@ -48,7 +64,7 @@ namespace PPAI_G13_3K4
                 lblTipoReseña.Visible = false;
                 cmbTipoReseña.Visible = false;
                 lblFormasVisReporte.Visible = false;
-                comboFormasVisReporte.Visible = false;
+                cmbFormasVisReporte.Visible = false;
                 MessageBox.Show("La fecha 'Desde' no puede ser mayor que la fecha 'Hasta'.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
@@ -65,15 +81,12 @@ namespace PPAI_G13_3K4
             MessageBox.Show("Seleccionar el tipo de reseña.");
         }
 
-        public void tomarTipoReseña(string tipoReseña)
-        {
-            gestor.tomarTipoReseña(tipoReseña);
-        }
+
 
         public void mostrarFormasVisualizacion()
         {
             lblFormasVisReporte.Visible = true;
-            comboFormasVisReporte.Visible = true;
+            cmbFormasVisReporte.Visible = true;
         }
 
         public void solicitarFormaVisualizacion()
@@ -81,79 +94,53 @@ namespace PPAI_G13_3K4
             MessageBox.Show("Seleccionar la forma de visualización.");
         }
 
-        public void tomarFormaVisualizacion(string formaVis)
-        {
-            gestor.tomarFormaVisualizacion(formaVis);
-        }
-        public void tomarConfirmacionReporte()
-        {
-            gestor.tomarConfirmacionReporte();
-        }
+
 
         public void solicitarConfirmacionReporte()
         {
-            // Muestra el MessageBox y captura el resultado del botón presionado
-            DialogResult opcion = MessageBox.Show("¿Desea generar el reporte?", "Confirmación", MessageBoxButtons.OKCancel);
+            msgBoxConfirmacion.Visible = true;
+        }
+        private void tomarConfirmacionReporte(object sender, EventArgs e)
+        {
+            gestor.tomarConfirmacionReporte();
+            msgBoxConfirmacion.Visible = false;
 
-            // Verifica la respuesta del usuario
-            if (opcion == DialogResult.OK)
-            {
-                this.tomarConfirmacionReporte();
-            }
-            else
-            {
-                Application.Exit();
-            }
+
+        }
+
+        private void tomarCancelacionReporte(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
         public void informarGeneracionExitosa()
         {
             DialogResult opcion = MessageBox.Show("Reporte generado con exito");
 
         }
-        private void btnGenerarRankingVinos_Click(object sender, EventArgs e)
-        {
-            btnGenerarRankingVinos.Visible = false;
-            gestor.opcGenerarRankVinos();
-        }
 
-        private void fechaDesde_ValueChanged(object sender, EventArgs e)
-        {
-           bool validacion = this.validarFechas(fechaDesde.Value, fechaHasta.Value);
-           if (validacion)
-            {
-                this.tomarFechaDesdeRanking(fechaDesde.Value);
-            }
-        }
 
-        private void fechaHasta_ValueChanged(object sender, EventArgs e)
-        {
-            bool validacion = this.validarFechas(fechaDesde.Value, fechaHasta.Value);
-            if (validacion)
-            {
-                this.tomarFechaHastaRanking(fechaHasta.Value);
-            };
-        }
 
-        private void cmbTipoReseña_SelectedIndexChanged(object sender, EventArgs e)
+
+        private void tomarTipoReseña(object sender, EventArgs e)
         {
             if (cmbTipoReseña.SelectedItem != null)
             {
                 string tipoReseña = cmbTipoReseña.SelectedItem.ToString();
                 if (tipoReseña == "Reseñas de Sommelier")
                 {
-                    this.tomarTipoReseña(tipoReseña);
-                }     
+                    gestor.tomarTipoReseña(tipoReseña);
+                }
             }
         }
 
-        private void comboFormasVisReporte_SelectedIndexChanged(object sender, EventArgs e)
+        private void tomarFormaVisualizacion(object sender, EventArgs e)
         {
-            if (comboFormasVisReporte.SelectedItem != null)
+            if (cmbFormasVisReporte.SelectedItem != null)
             {
-                string formaVis = comboFormasVisReporte.SelectedItem.ToString();
+                string formaVis = cmbFormasVisReporte.SelectedItem.ToString();
                 if (formaVis == "Archivo Excel")
                 {
-                    this.tomarFormaVisualizacion(formaVis);
+                    gestor.tomarFormaVisualizacion(formaVis);
                 }
             }
         }

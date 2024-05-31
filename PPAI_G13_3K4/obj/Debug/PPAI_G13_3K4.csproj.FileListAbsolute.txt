@@ -36,3 +36,4 @@ C:\Users\Victus\Desktop\UTN\DSI\PPAI\PPAI_G13_3K4\PPAI_G13_3K4\bin\Debug\Newtons
 C:\Users\Victus\Desktop\UTN\DSI\PPAI\PPAI_G13_3K4\PPAI_G13_3K4\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Victus\Desktop\UTN\DSI\PPAI\PPAI_G13_3K4\PPAI_G13_3K4\obj\Debug\PPAI_G13_3K4.Pantalla.InterfazExcel.resources
 C:\Users\Victus\Desktop\UTN\DSI\PPAI\PPAI_G13_3K4\PPAI_G13_3K4\obj\Debug\PPAI_G13.3594DF85.Up2Date
+C:\Users\matut\OneDrive\Documentos\GitHub\PPAI_G13_3K4\PPAI_G13_3K4\PPAI_G13_3K4\obj\Debug\PPAI_G13_3K4.Pantalla.PantallaPrincipalBonVino.resources

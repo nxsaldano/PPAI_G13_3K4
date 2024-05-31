@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PPAI_G13_3K4.Pantalla;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace PPAI_G13_3K4
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PantallaGenerarRanking());
+            Application.Run(new PantallaPrincipalBonVino());
         }
     }
 }

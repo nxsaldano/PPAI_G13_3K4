@@ -18,13 +18,11 @@ namespace PPAI_G13_3K4.Clases
         public DateTime fechaHastaSeleccionada { get; set; }
         public string tipoReseñaSeleccionada { get; set; }
         public string formasVisualizacion { get; set; }
-        public List<(Vino vino, float puntajePromSom)> vinosPuntajeSom { get; set; }
+        public List<Vino> vinosTotales { get; set; }
         public List<Vino> vinosFiltrados { get; set; }
-        public List<Bodega> bodegas { get; set; }
-        public List<Pais> paises { get; set; }
-        public List<RegionVitivinicola> regioneVit { get; set; }
-        public List<Vino> vino { get; set; }
+        public List<(Vino vino, float puntajePromSom)> vinosPuntajePromSom { get; set; }
         public List<(string nombre, float puntajePromSom, float precioSugerido, string bodega, List<string> varietales, string region, string pais)> vinosRankingExcel{ get; set; }
+
         private PantallaGenerarRanking pantalla;
         private InterfazExcel interfazExcel;
 
@@ -34,12 +32,9 @@ namespace PPAI_G13_3K4.Clases
             this.fechaHastaSeleccionada = DateTime.Today;
             this.tipoReseñaSeleccionada = tipoReseñaSeleccionada;
             this.formasVisualizacion = formasVisualizacion;
-            this.vinosPuntajeSom = new List<(Vino,float)>();
+            this.vinosPuntajePromSom = new List<(Vino,float)>();
             this.vinosFiltrados = new List<Vino>();
-            this.bodegas = new List<Bodega>();
-            this.paises = new List<Pais>();
-            this.regioneVit = new List<RegionVitivinicola>();
-            this.vino = new List<Vino>();
+            this.vinosTotales = new List<Vino>();
             this.pantalla = pantalla;
             this.interfazExcel = new InterfazExcel();
             this.vinosRankingExcel = new List<(string, float, float, string, List<string>, string, string)>();
@@ -47,7 +42,7 @@ namespace PPAI_G13_3K4.Clases
        
         public void opcGenerarRankVinos()
         {
-            pantalla.solicitarFechaDesdeHasta();
+            pantalla.solicitarFechaDesdeHastaRanking();
         }
 
         public void tomarFechaDesdeRanking(DateTime fechaDesde)
@@ -77,6 +72,27 @@ namespace PPAI_G13_3K4.Clases
         public void tomarConfirmacionReporte()
         {
             buscarVinosReseñaEnPeriodoDeSom();
+         
+ 
+        }
+        public void buscarVinosReseñaEnPeriodoDeSom()
+        {
+            //string filePath = "..\\..\\Recursos\\jsonVinosSinBodega.txt";
+            string filePath = "..\\..\\Recursos\\jsonVinos.txt";
+
+            string jsonContent = File.ReadAllText(filePath);
+            // se convierte el string JSON a una lista de objetos de tipo "Vino"
+            vinosTotales = JsonConvert.DeserializeObject<List<Vino>>(jsonContent);
+
+            foreach (Vino vino in vinosTotales)
+            {
+                if (vino.verificarReseñasEnPeriodoDeSom(fechaDesdeSeleccionada, fechaHastaSeleccionada))
+                {
+                    vinosFiltrados.Add(vino);
+                }
+
+            }
+
             if (vinosFiltrados.Count == 0)
             {
                 pantalla.mostrarMensajeError("No se encontraron reseñas creadas por Sommeliers en este periodo.");
@@ -94,8 +110,7 @@ namespace PPAI_G13_3K4.Clases
                 generarReporteExcel();
                 finCU();
             }
-            
- 
+
         }
         public bool chequearBodegasExistentes(List<Vino> listaVinos)//AGREGAR METODO
         {
@@ -108,62 +123,41 @@ namespace PPAI_G13_3K4.Clases
             }
             return false;
         }
-        public void buscarVinosReseñaEnPeriodoDeSom()
-        {
-            //string filePath = "..\\..\\Recursos\\jsonVinosSinBodega.txt";
-            string filePath = "..\\..\\Recursos\\jsonVinos.txt";
-
-            string jsonContent = File.ReadAllText(filePath);
-            // se convierte el string JSON a una lista de objetos de tipo "Vino"
-            vino = JsonConvert.DeserializeObject<List<Vino>>(jsonContent);
-
-            foreach (Vino vino in vino)
-            {
-                if (vino.verificarReseñasEnPeriodoDeSom(fechaDesdeSeleccionada, fechaHastaSeleccionada))
-                {
-                    vinosFiltrados.Add(vino);
-                }
-
-            }
-
-
-            
-        }
-
         public void calcularPuntajeProm()
         {
             foreach (Vino vino in vinosFiltrados)
             {
-                vinosPuntajeSom.Add((vino, vino.obtenerPuntajePromedio(fechaDesdeSeleccionada, fechaHastaSeleccionada)));
+                vinosPuntajePromSom.Add((vino, vino.obtenerPuntajePromedio(fechaDesdeSeleccionada, fechaHastaSeleccionada)));
             }
         }
 
         public void ordenarSegunPuntajePromedio()
         {
-            vinosPuntajeSom = vinosPuntajeSom.OrderByDescending(v => v.puntajePromSom).ToList();
+            vinosPuntajePromSom = vinosPuntajePromSom.OrderByDescending(v => v.puntajePromSom).ToList();
         }
 
         public void buscarDatosDiezMejoresVinos()
         {
 
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < vinosPuntajePromSom.Take(10).Count(); i++)
             {
-                string nom = vinosPuntajeSom[i].vino.getNombre();
-                float calSom = vinosPuntajeSom[i].puntajePromSom;
-                float precSug = vinosPuntajeSom[i].vino.getPrecio();
-                List<string> datosBodega = vinosPuntajeSom[i].vino.buscarDatosBodega();
+                string nom = vinosPuntajePromSom[i].vino.getNombre();
+                float calSom = vinosPuntajePromSom[i].puntajePromSom;
+                float precSug = vinosPuntajePromSom[i].vino.getPrecio();
+                List<string> datosBodega = vinosPuntajePromSom[i].vino.buscarDatosBodega();
                 string bodega = datosBodega[0];
                 string region = datosBodega[1];
                 string pais = datosBodega[2];
-                List<string> varietales = vinosPuntajeSom[i].vino.obtenerVarietal();
+                List<string> varietales = vinosPuntajePromSom[i].vino.obtenerVarietal();
                 vinosRankingExcel.Add((nom, calSom, precSug, bodega, varietales, region, pais));
             }
         }
 
         public void generarReporteExcel()
         {
-            pantalla.informarGeneracionExitosa();
             interfazExcel.exportarExcel(this.vinosRankingExcel);
+            pantalla.informarGeneracionExitosa();
+
         }
 
         public void finCU()

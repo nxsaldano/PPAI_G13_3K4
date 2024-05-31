@@ -32,9 +32,36 @@ namespace PPAI_G13_3K4.Clases
             this.varietal = varietal;
             this.reseña = reseña;
         }
+        public bool verificarReseñasEnPeriodoDeSom(DateTime fechaDesde, DateTime fechaHasta)
+        {
+            bool result = false;
+            foreach (Reseña reseña in reseña)
+            {
+                if (reseña.sosDePeriodo(fechaDesde, fechaHasta) && reseña.sosDeSommelier())
+                {
+                    result = true;
+                    break;
+                }
+            }
+            return result;
+        }
         public bool existeBodega()//AGREGAR METODO
         {
             return bodega!=null;
+        }
+        public float obtenerPuntajePromedio(DateTime fechaDesde, DateTime fechaHasta)
+        {
+            float puntajes = 0, deSom = 0;
+            foreach (Reseña reseña in reseña)
+            {
+                if (reseña.sosDePeriodo(fechaDesde, fechaHasta) && reseña.sosDeSommelier())
+                {
+                    puntajes += reseña.getPuntaje();
+                    deSom += 1;
+                }
+
+            }
+            return calcularPromedioPuntaje(puntajes, deSom);
         }
         public string getNombre()
         {
@@ -57,34 +84,9 @@ namespace PPAI_G13_3K4.Clases
         {
             return puntajes/deSom;
         }
-        public float obtenerPuntajePromedio(DateTime fechaDesde, DateTime fechaHasta)
-        {
-            float puntajes = 0, deSom = 0;
-            foreach (Reseña reseña in reseña)
-            {
-                if (reseña.sosDePeriodo(fechaDesde, fechaHasta)&& reseña.sosDeSommelier())
-                {
-                    puntajes += reseña.getPuntaje();
-                    deSom += 1;
-                }
 
-            }
-            return calcularPromedioPuntaje(puntajes, deSom);
-        }
 
-        public bool verificarReseñasEnPeriodoDeSom(DateTime fechaDesde, DateTime fechaHasta)
-        {
-            bool result = false;
-            foreach (Reseña reseña in reseña)
-            {
-                if (reseña.sosDePeriodo(fechaDesde, fechaHasta) && reseña.sosDeSommelier())
-                {
-                    result=true;
-                    break;
-                }
-            }
-            return result;
-        }
+
 
         public List<string> buscarDatosBodega()
         {
