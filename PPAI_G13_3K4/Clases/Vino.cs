@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace PPAI_G13_3K4.Clases
 {
-    internal class Vino
+    internal class Vino : IAgregado
     {
         public string nombre { get; set; }
         public float precioARS { get; set; }
@@ -20,13 +20,13 @@ namespace PPAI_G13_3K4.Clases
         public List<Varietal> varietal { get; set; }
         public List<Reseña> reseña { get; set; }
 
-        public Vino(string nombre, float precioARS, int añada, DateTime fechaActualizacion, string imgenEtiqueta, float notaDeCataBodega, Bodega bodega, List<Varietal> varietal, List<Reseña> reseña)
+        public Vino(string nombre, float precioARS, int añada, DateTime fechaActualizacion, string imagenEtiqueta, float notaDeCataBodega, Bodega bodega, List<Varietal> varietal, List<Reseña> reseña)
         {
             this.nombre = nombre;
             this.precioARS = precioARS;
             this.añada = añada;
             this.fechaActualizacion = fechaActualizacion;
-            this.imagenEtiqueta = imgenEtiqueta;
+            this.imagenEtiqueta = imagenEtiqueta;
             this.notaDeCataBodega = notaDeCataBodega;
             this.bodega = bodega;
             this.varietal = varietal;
@@ -35,14 +35,29 @@ namespace PPAI_G13_3K4.Clases
         public bool verificarReseñasEnPeriodoDeSom(DateTime fechaDesde, DateTime fechaHasta)
         {
             bool result = false;
-            foreach (Reseña reseña in reseña)
+            
+            Object[] fechas = new Object[] {fechaDesde, fechaHasta};
+            Object[] reseñas = new Object[] { reseña };
+            
+            Iterador iteradorReseñas = crearIterador(reseñas, fechas);
+            
+            iteradorReseñas.primero();
+            
+            Reseña reseñaResultado;
+            while (iteradorReseñas.haTerminado())
+                
             {
-                if (reseña.sosDePeriodo(fechaDesde, fechaHasta) && reseña.sosDeSommelier())
+                
+                reseñaResultado = (Reseña) iteradorReseñas.getActual();
+                if (reseñaResultado != null)
                 {
                     result = true;
                     break;
                 }
+                iteradorReseñas.siguiente();
+                
             }
+           
             return result;
         }
         public bool existeBodega()
@@ -90,5 +105,11 @@ namespace PPAI_G13_3K4.Clases
         {
             return precioARS;
         }
+        
+        public Iterador crearIterador(Object[] elementos, Object[] filtros)
+        {
+            return new IteradorReseñas(elementos, filtros);
+        }
+        
     }
 }

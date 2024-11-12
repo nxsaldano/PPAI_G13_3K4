@@ -2,17 +2,13 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using PPAI_G13_3K4;
 using Newtonsoft.Json;
 using PPAI_G13_3K4.Pantalla;
 
 namespace PPAI_G13_3K4.Clases
 {
-    internal class GestorRankingVinos
+    internal class GestorRankingVinos : IAgregado
     {
         public DateTime fechaDesdeSeleccionada { get; set; }
         public DateTime fechaHastaSeleccionada { get; set; }
@@ -21,7 +17,8 @@ namespace PPAI_G13_3K4.Clases
         public List<Vino> vinosTotales { get; set; }
         public List<Vino> vinosFiltrados { get; set; }
         public List<(Vino vino, float puntajePromSom)> vinosPuntajePromSom { get; set; }
-        public List<(string nombre, float puntajePromSom, float precioSugerido, string bodega, List<string> varietales, string region, string pais)> vinosRankingExcel{ get; set; }
+        public List<(string nombre, float puntajePromSom, float precioSugerido, string bodega, List<string> varietales, 
+            string region, string pais)> vinosRankingExcel { get; set; }
 
         private PantallaGenerarRanking pantalla;
         private InterfazExcel interfazExcel;
@@ -77,31 +74,47 @@ namespace PPAI_G13_3K4.Clases
         }
         public void buscarVinosReseñaEnPeriodoDeSom()
         {
+            // ruta de la base de datos alternativa
             //string filePath = "..\\..\\Recursos\\jsonVinosSinBodega.txt";
+            
+            // ruta de la base de datos 
             string filePath = "..\\..\\Recursos\\jsonVinos.txt";
-
+            
             string jsonContent = File.ReadAllText(filePath);
             // se convierte el string JSON a una lista de objetos de tipo "Vino"
             vinosTotales = JsonConvert.DeserializeObject<List<Vino>>(jsonContent);
+            
+            Object[] fechas = new Object[] { fechaDesdeSeleccionada, fechaHastaSeleccionada };
+            Object[] vinos = new Object[] { vinosTotales };
+            
+            // busca dentro de la colección que contiene todos los vinos
+            
+            Iterador iteradorVinos = crearIterador(vinos, fechas);
 
-            foreach (Vino vino in vinosTotales)
+            iteradorVinos.primero();
+            while (iteradorVinos.haTerminado())
             {
-                if (vino.verificarReseñasEnPeriodoDeSom(fechaDesdeSeleccionada, fechaHastaSeleccionada))
-                {
-                    vinosFiltrados.Add(vino);
-                }
-
+                
+                Vino vino = (Vino) iteradorVinos.getActual();
+                vinosFiltrados.Add(vino);
+                iteradorVinos.siguiente();
+                
             }
-
+            
             if (vinosFiltrados.Count == 0)
             {
                 pantalla.mostrarMensajeError("No se encontraron reseñas creadas por Sommeliers en este periodo.");
 
             }
+            
+            // verifica si existen bodegas registradas para esos vinos
             else if (!chequearBodegasExistentes(vinosFiltrados))
             {
                 pantalla.mostrarMensajeError("No existen bodegas registradas");
             }
+            
+            /* luego de filtrar los vinos, se calcula su puntaje promedio, se los ordena según ese puntaje, se añaden 
+            los diez mejores vinos al excel y se genera el reporte */
             else
             {
                 calcularPuntajeProm();
@@ -126,8 +139,10 @@ namespace PPAI_G13_3K4.Clases
         public void calcularPuntajeProm()
         {
             foreach (Vino vino in vinosFiltrados)
-            {
-                vinosPuntajePromSom.Add((vino, vino.obtenerPuntajePromedio(fechaDesdeSeleccionada, fechaHastaSeleccionada)));
+                             {
+                                 /* calcula el puntaje promedio de cada vino y añade el vino junto a su puntaje a una colección de vinos
+                                 y sus promedios */
+                                 vinosPuntajePromSom.Add((vino, vino.obtenerPuntajePromedio(fechaDesdeSeleccionada, fechaHastaSeleccionada)));
             }
         }
 
@@ -139,8 +154,12 @@ namespace PPAI_G13_3K4.Clases
         public void buscarDatosDiezMejoresVinos()
         {
 
+            // se toman los diez vinos con puntaje promedio mas alto recorriendo 10 veces la colección de vinos con 
+            // reseña de sommelier y sus puntajes promedio
             for (int i = 0; i < vinosPuntajePromSom.Take(10).Count(); i++)
             {
+                
+                // se guarda cada atributo del vino en su variable correspondiente 
                 string nom = vinosPuntajePromSom[i].vino.getNombre();
                 float calSom = vinosPuntajePromSom[i].puntajePromSom;
                 float precSug = vinosPuntajePromSom[i].vino.getPrecio();
@@ -149,17 +168,29 @@ namespace PPAI_G13_3K4.Clases
                 string region = datosBodega[1];
                 string pais = datosBodega[2];
                 List<string> varietales = vinosPuntajePromSom[i].vino.obtenerVarietal();
+                
+                /* utilizando las variables se añade cada vino a una colección que posteriormente se utilizará
+                para generar el excel con el ranking de vinos */
                 vinosRankingExcel.Add((nom, calSom, precSug, bodega, varietales, region, pais));
+                
             }
+            
         }
 
         public void generarReporteExcel()
         {
+            // se envia la colección de vinos para el ranking a la interfaz excel
             interfazExcel.exportarExcel(this.vinosRankingExcel);
+            // luego de haberse exportado el excel, se informa al usuario la generación del excel
             pantalla.informarGeneracionExitosa();
 
         }
 
+        public Iterador crearIterador(Object[] elementos, Object[] filtros)
+        {
+            return new IteradorVinos(elementos, filtros);
+        }
+        
         public void finCU()
         {
             pantalla.WindowState = FormWindowState.Minimized;

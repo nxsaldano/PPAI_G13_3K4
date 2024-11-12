@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PantallaPrincipalBonVino));
             this.btnGenerarRankingVinos = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -45,15 +46,16 @@
             // 
             // PantallaPrincipalBonVino
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::PPAI_G13_3K4.Properties.Resources.Captura_de_pantalla_2024_05_27_220325;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(651, 423);
             this.Controls.Add(this.btnGenerarRankingVinos);
+            this.DoubleBuffered = true;
             this.Name = "PantallaPrincipalBonVino";
             this.Text = "PantallaPrincipalBonVino";
+            this.Resize += new System.EventHandler(this.PantallaPrincipalBonVino_Resize);
             this.ResumeLayout(false);
-
         }
 
         #endregion

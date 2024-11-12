@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using PPAI_G13_3K4.Clases;
 
@@ -140,5 +133,9 @@ namespace PPAI_G13_3K4
             Application.Restart();
         }
 
+        private void PantallaGenerarRanking_Load(object sender, EventArgs e)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

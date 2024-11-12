@@ -33,7 +33,7 @@ namespace PPAI_G13_3K4.Clases
         }
         public bool sosDeSommelier()
         {
-            return this.esPremium;
+            return esPremium;
         }
     }
 }

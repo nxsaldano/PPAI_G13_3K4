@@ -51,6 +51,10 @@
   <ItemGroup>
     <Compile Include="Clases\Bodega.cs" />
     <Compile Include="Clases\GestorRankingVinos.cs" />
+    <Compile Include="Clases\IAgregado.cs" />
+    <Compile Include="Clases\Iterador.cs" />
+    <Compile Include="Clases\IteradorReseñas.cs" />
+    <Compile Include="Clases\IteradorVinos.cs" />
     <Compile Include="Clases\Pais.cs" />
     <Compile Include="Clases\Provincia.cs" />
     <Compile Include="Clases\RegionVitivinicola.cs" />
@@ -112,11 +116,11 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <None Include="Recursos\Captura de pantalla 2024-05-27 220325.png" />
-    <None Include="Recursos\Captura de pantalla 2024-05-27 220732.png" />
+    <None Include="Recursos\fondo1.png" />
+    <None Include="Recursos\fondo2.png" />
     <Content Include="Recursos\jsonVinosSinBodega.txt" />
     <Content Include="Recursos\jsonVinos.txt" />
-    <None Include="Recursos\_7b900e20-0de2-4dbc-9e07-6cf7ee61e043.jpeg" />
+    <None Include="Recursos\sinusar1.jpeg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

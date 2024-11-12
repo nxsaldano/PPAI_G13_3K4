@@ -25,8 +25,8 @@ namespace PPAI_G13_3K4
         #region Código generado por el Diseñador de Windows Forms
 
         /// <summary>
-        /// Método necesario para admitir el Diseñador. No se puede modificar
-        /// el contenido de este método con el editor de código.
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
@@ -73,7 +73,7 @@ namespace PPAI_G13_3K4
             this.lblPeriodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPeriodo.Location = new System.Drawing.Point(25, 25);
             this.lblPeriodo.Name = "lblPeriodo";
-            this.lblPeriodo.Size = new System.Drawing.Size(148, 16);
+            this.lblPeriodo.Size = new System.Drawing.Size(155, 17);
             this.lblPeriodo.TabIndex = 3;
             this.lblPeriodo.Text = "Periodo de reseñas:";
             this.lblPeriodo.Visible = false;
@@ -84,7 +84,7 @@ namespace PPAI_G13_3K4
             this.lblFechaDesde.BackColor = System.Drawing.Color.Transparent;
             this.lblFechaDesde.Location = new System.Drawing.Point(25, 50);
             this.lblFechaDesde.Name = "lblFechaDesde";
-            this.lblFechaDesde.Size = new System.Drawing.Size(90, 16);
+            this.lblFechaDesde.Size = new System.Drawing.Size(94, 17);
             this.lblFechaDesde.TabIndex = 4;
             this.lblFechaDesde.Text = "Fecha desde:";
             this.lblFechaDesde.Visible = false;
@@ -95,7 +95,7 @@ namespace PPAI_G13_3K4
             this.lblFechaHasta.BackColor = System.Drawing.Color.Transparent;
             this.lblFechaHasta.Location = new System.Drawing.Point(25, 125);
             this.lblFechaHasta.Name = "lblFechaHasta";
-            this.lblFechaHasta.Size = new System.Drawing.Size(84, 16);
+            this.lblFechaHasta.Size = new System.Drawing.Size(90, 17);
             this.lblFechaHasta.TabIndex = 5;
             this.lblFechaHasta.Text = "Fecha hasta:";
             this.lblFechaHasta.Visible = false;
@@ -103,10 +103,7 @@ namespace PPAI_G13_3K4
             // cmbTipoReseña
             // 
             this.cmbTipoReseña.FormattingEnabled = true;
-            this.cmbTipoReseña.Items.AddRange(new object[] {
-            "Reseñas normales",
-            "Reseñas de Sommelier",
-            "Reseñas de Amigos"});
+            this.cmbTipoReseña.Items.AddRange(new object[] { "Reseñas normales", "Reseñas de Sommelier", "Reseñas de Amigos" });
             this.cmbTipoReseña.Location = new System.Drawing.Point(25, 250);
             this.cmbTipoReseña.Name = "cmbTipoReseña";
             this.cmbTipoReseña.Size = new System.Drawing.Size(275, 24);
@@ -121,7 +118,7 @@ namespace PPAI_G13_3K4
             this.lblTipoReseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTipoReseña.Location = new System.Drawing.Point(25, 225);
             this.lblTipoReseña.Name = "lblTipoReseña";
-            this.lblTipoReseña.Size = new System.Drawing.Size(117, 16);
+            this.lblTipoReseña.Size = new System.Drawing.Size(123, 17);
             this.lblTipoReseña.TabIndex = 7;
             this.lblTipoReseña.Text = "Tipo de reseña:";
             this.lblTipoReseña.Visible = false;
@@ -133,7 +130,7 @@ namespace PPAI_G13_3K4
             this.lblFormasVisReporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFormasVisReporte.Location = new System.Drawing.Point(25, 325);
             this.lblFormasVisReporte.Name = "lblFormasVisReporte";
-            this.lblFormasVisReporte.Size = new System.Drawing.Size(181, 16);
+            this.lblFormasVisReporte.Size = new System.Drawing.Size(189, 17);
             this.lblFormasVisReporte.TabIndex = 8;
             this.lblFormasVisReporte.Text = "Formas de Visualización:";
             this.lblFormasVisReporte.Visible = false;
@@ -141,10 +138,7 @@ namespace PPAI_G13_3K4
             // cmbFormasVisReporte
             // 
             this.cmbFormasVisReporte.FormattingEnabled = true;
-            this.cmbFormasVisReporte.Items.AddRange(new object[] {
-            "PDF",
-            "Archivo Excel",
-            "Pantalla"});
+            this.cmbFormasVisReporte.Items.AddRange(new object[] { "PDF", "Archivo Excel", "Pantalla" });
             this.cmbFormasVisReporte.Location = new System.Drawing.Point(25, 350);
             this.cmbFormasVisReporte.Name = "cmbFormasVisReporte";
             this.cmbFormasVisReporte.Size = new System.Drawing.Size(275, 24);
@@ -169,7 +163,7 @@ namespace PPAI_G13_3K4
             this.lblConfirmacion.AutoSize = true;
             this.lblConfirmacion.Location = new System.Drawing.Point(50, 52);
             this.lblConfirmacion.Name = "lblConfirmacion";
-            this.lblConfirmacion.Size = new System.Drawing.Size(172, 16);
+            this.lblConfirmacion.Size = new System.Drawing.Size(184, 17);
             this.lblConfirmacion.TabIndex = 2;
             this.lblConfirmacion.Text = "¿Desea generar el reporte?";
             // 
@@ -213,11 +207,11 @@ namespace PPAI_G13_3K4
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PantallaGenerarRanking";
             this.Text = "Generar Ranking de Vinos";
+            this.Load += new System.EventHandler(this.PantallaGenerarRanking_Load);
             this.msgBoxConfirmacion.ResumeLayout(false);
             this.msgBoxConfirmacion.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion

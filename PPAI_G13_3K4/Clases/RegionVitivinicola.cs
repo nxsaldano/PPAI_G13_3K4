@@ -11,6 +11,7 @@ namespace PPAI_G13_3K4.Clases
         public string nombre { get; set; }
         public string descripcion { get; set; }
         private Provincia provincia { get; set; }
+        
         public RegionVitivinicola(string nombre, string descripcion, Provincia provincia)
         {
             this.nombre = nombre;
