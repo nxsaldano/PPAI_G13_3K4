@@ -207,7 +207,6 @@ namespace PPAI_G13_3K4
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PantallaGenerarRanking";
             this.Text = "Generar Ranking de Vinos";
-            this.Load += new System.EventHandler(this.PantallaGenerarRanking_Load);
             this.msgBoxConfirmacion.ResumeLayout(false);
             this.msgBoxConfirmacion.PerformLayout();
             this.ResumeLayout(false);

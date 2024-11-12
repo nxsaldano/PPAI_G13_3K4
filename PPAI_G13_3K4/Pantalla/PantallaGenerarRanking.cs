@@ -132,10 +132,5 @@ namespace PPAI_G13_3K4
             MessageBox.Show(msg, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             Application.Restart();
         }
-
-        private void PantallaGenerarRanking_Load(object sender, EventArgs e)
-        {
-            throw new System.NotImplementedException();
-        }
     }
 }

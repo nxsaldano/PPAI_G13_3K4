@@ -10,7 +10,7 @@ namespace PPAI_G13_3K4.Clases
 
         public IteradorVinos(Object[] elementos, Object[] filtros)
         {
-            this.elementos = (Vino[]) elementos;
+            this.elementos = (Vino[]) elementos[0];
             this.filtros = filtros;
         }
 

@@ -34,8 +34,6 @@ namespace PPAI_G13_3K4.Clases
         }
         public bool verificarReseñasEnPeriodoDeSom(DateTime fechaDesde, DateTime fechaHasta)
         {
-            bool result = false;
-            
             Object[] fechas = new Object[] {fechaDesde, fechaHasta};
             Object[] reseñas = new Object[] { reseña };
             
@@ -43,6 +41,7 @@ namespace PPAI_G13_3K4.Clases
             
             iteradorReseñas.primero();
             
+            bool result = false;
             Reseña reseñaResultado;
             while (iteradorReseñas.haTerminado())
                 

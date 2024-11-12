@@ -84,11 +84,13 @@ namespace PPAI_G13_3K4.Clases
             // se convierte el string JSON a una lista de objetos de tipo "Vino"
             vinosTotales = JsonConvert.DeserializeObject<List<Vino>>(jsonContent);
             
+            // se crea un array de tipo Object que consiste en dos elementos, que son las fechas seleccionadas
             Object[] fechas = new Object[] { fechaDesdeSeleccionada, fechaHastaSeleccionada };
-            Object[] vinos = new Object[] { vinosTotales };
+            // se crea un array de tipo Object cuyo único elemento será un array con todos los vinos
+            // como vinosTotales es una lista, la convertimos primero en un array Vino[] con .ToArray()
+            Object[] vinos = new Object[] { vinosTotales.ToArray() };
             
-            // busca dentro de la colección que contiene todos los vinos
-            
+            // todo resolver filtrado de vinos ya que se ejectua el mensaje de error de vinosFiltrados.Count == 0
             Iterador iteradorVinos = crearIterador(vinos, fechas);
 
             iteradorVinos.primero();

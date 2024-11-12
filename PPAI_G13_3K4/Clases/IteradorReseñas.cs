@@ -11,7 +11,7 @@ namespace PPAI_G13_3K4.Clases
 
         public IteradorReseñas(Object[] elementos, Object[] filtros)
         {
-            this.elementos = (Reseña[])elementos;
+            this.elementos = (Reseña[]) elementos[0];
             this.filtros = filtros;
         }
 
