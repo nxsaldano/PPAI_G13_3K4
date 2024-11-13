@@ -11,7 +11,7 @@ namespace PPAI_G13_3K4.Clases
 
         public IteradorReseñas(Object[] elementos, Object[] filtros)
         {
-            this.elementos = (Reseña[]) elementos[0];
+            this.elementos = (Reseña[]) elementos;
             this.filtros = filtros;
         }
 
@@ -29,7 +29,7 @@ namespace PPAI_G13_3K4.Clases
         // todo verificar que no corte antes del ultimo
         public bool haTerminado()
         {
-            return posicion > elementos.Length;
+            return posicion >= elementos.Length;
         }
 
         public void primero()

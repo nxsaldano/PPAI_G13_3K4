@@ -35,7 +35,7 @@ namespace PPAI_G13_3K4.Clases
         public bool verificarReseñasEnPeriodoDeSom(DateTime fechaDesde, DateTime fechaHasta)
         {
             Object[] fechas = new Object[] {fechaDesde, fechaHasta};
-            Object[] reseñas = new Object[] { reseña };
+            Object[] reseñas = reseña.ToArray();
             
             Iterador iteradorReseñas = crearIterador(reseñas, fechas);
             
@@ -43,10 +43,9 @@ namespace PPAI_G13_3K4.Clases
             
             bool result = false;
             Reseña reseñaResultado;
-            while (iteradorReseñas.haTerminado())
-                
+            //mientras el iterador no haya terminado de recorrer toda la coleccion (encuentra una reseña en periodo y de somelier)
+            while (!iteradorReseñas.haTerminado())
             {
-                
                 reseñaResultado = (Reseña) iteradorReseñas.getActual();
                 if (reseñaResultado != null)
                 {

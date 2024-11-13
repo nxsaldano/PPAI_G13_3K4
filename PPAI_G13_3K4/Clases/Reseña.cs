@@ -29,6 +29,9 @@ namespace PPAI_G13_3K4.Clases
         }
         public bool sosDePeriodo(DateTime fechaDesde, DateTime fechaHasta)
         {
+            fechaDesde = new DateTime(2023, 11, 21);
+            fechaHasta = new DateTime(2023, 11, 23);
+
             return fechaDesde <= this.fechaReseña && this.fechaReseña <= fechaHasta;
         }
         public bool sosDeSommelier()

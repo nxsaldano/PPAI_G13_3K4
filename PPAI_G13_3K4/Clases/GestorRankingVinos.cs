@@ -69,8 +69,6 @@ namespace PPAI_G13_3K4.Clases
         public void tomarConfirmacionReporte()
         {
             buscarVinosReseñaEnPeriodoDeSom();
-         
- 
         }
         public void buscarVinosReseñaEnPeriodoDeSom()
         {
@@ -88,25 +86,24 @@ namespace PPAI_G13_3K4.Clases
             Object[] fechas = new Object[] { fechaDesdeSeleccionada, fechaHastaSeleccionada };
             // se crea un array de tipo Object cuyo único elemento será un array con todos los vinos
             // como vinosTotales es una lista, la convertimos primero en un array Vino[] con .ToArray()
-            Object[] vinos = new Object[] { vinosTotales.ToArray() };
+            Object[] vinos = vinosTotales.ToArray();
             
             // todo resolver filtrado de vinos ya que se ejectua el mensaje de error de vinosFiltrados.Count == 0
             Iterador iteradorVinos = crearIterador(vinos, fechas);
 
             iteradorVinos.primero();
-            while (iteradorVinos.haTerminado())
+            while (!iteradorVinos.haTerminado())
             {
-                
                 Vino vino = (Vino) iteradorVinos.getActual();
-                vinosFiltrados.Add(vino);
+                if (vino != null) {
+                    vinosFiltrados.Add(vino);
+                }
                 iteradorVinos.siguiente();
-                
             }
             
             if (vinosFiltrados.Count == 0)
             {
                 pantalla.mostrarMensajeError("No se encontraron reseñas creadas por Sommeliers en este periodo.");
-
             }
             
             // verifica si existen bodegas registradas para esos vinos
