@@ -11,16 +11,16 @@ namespace PPAI_G13_3K4.Clases
     internal class Vino : IAgregado
     {
         public string nombre { get; set; }
-        public float precioARS { get; set; }
+        public decimal precioARS { get; set; }
         public int añada { get; set; }
         public DateTime fechaActualizacion { get; set; }
         public string imagenEtiqueta { get; set; }
-        public float notaDeCataBodega { get; set; }
+        public decimal notaDeCataBodega { get; set; }
         public Bodega bodega { get; set; }
         public List<Varietal> varietal { get; set; }
         public List<Reseña> reseña { get; set; }
 
-        public Vino(string nombre, float precioARS, int añada, DateTime fechaActualizacion, string imagenEtiqueta, float notaDeCataBodega, Bodega bodega, List<Varietal> varietal, List<Reseña> reseña)
+        public Vino(string nombre, decimal precioARS, int añada, DateTime fechaActualizacion, string imagenEtiqueta, decimal notaDeCataBodega, Bodega bodega, List<Varietal> varietal, List<Reseña> reseña)
         {
             this.nombre = nombre;
             this.precioARS = precioARS;
@@ -62,9 +62,9 @@ namespace PPAI_G13_3K4.Clases
         {
             return bodega!=null;
         }
-        public float obtenerPuntajePromedio(DateTime fechaDesde, DateTime fechaHasta)
+        public decimal obtenerPuntajePromedio(DateTime fechaDesde, DateTime fechaHasta)
         {
-            float puntajes = 0, deSom = 0;
+            decimal puntajes = 0, deSom = 0;
             foreach (Reseña reseña in reseña)
             {
                 if (reseña.sosDePeriodo(fechaDesde, fechaHasta) && reseña.sosDeSommelier())
@@ -76,7 +76,7 @@ namespace PPAI_G13_3K4.Clases
             }
             return calcularPromedioPuntaje(puntajes, deSom);
         }
-        public float calcularPromedioPuntaje(float puntajes, float deSom)
+        public decimal calcularPromedioPuntaje(decimal puntajes, decimal deSom)
         {
             return puntajes / deSom;
         }
@@ -99,7 +99,7 @@ namespace PPAI_G13_3K4.Clases
         {
             return nombre;
         }
-        public float getPrecio()
+        public decimal getPrecio()
         {
             return precioARS;
         }

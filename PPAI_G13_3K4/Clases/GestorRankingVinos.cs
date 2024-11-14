@@ -16,8 +16,8 @@ namespace PPAI_G13_3K4.Clases
         public string formasVisualizacion { get; set; }
         public List<Vino> vinosTotales { get; set; }
         public List<Vino> vinosFiltrados { get; set; }
-        public List<(Vino vino, float puntajePromSom)> vinosPuntajePromSom { get; set; }
-        public List<(string nombre, float puntajePromSom, float precioSugerido, string bodega, List<string> varietales, 
+        public List<(Vino vino, decimal puntajePromSom)> vinosPuntajePromSom { get; set; }
+        public List<(string nombre, decimal puntajePromSom, decimal precioSugerido, string bodega, List<string> varietales, 
             string region, string pais)> vinosRankingExcel { get; set; }
 
         private PantallaGenerarRanking pantalla;
@@ -29,12 +29,12 @@ namespace PPAI_G13_3K4.Clases
             this.fechaHastaSeleccionada = DateTime.Today;
             this.tipoReseñaSeleccionada = tipoReseñaSeleccionada;
             this.formasVisualizacion = formasVisualizacion;
-            this.vinosPuntajePromSom = new List<(Vino,float)>();
+            this.vinosPuntajePromSom = new List<(Vino,decimal)>();
             this.vinosFiltrados = new List<Vino>();
             this.vinosTotales = new List<Vino>();
             this.pantalla = pantalla;
             this.interfazExcel = new InterfazExcel();
-            this.vinosRankingExcel = new List<(string, float, float, string, List<string>, string, string)>();
+            this.vinosRankingExcel = new List<(string, decimal, decimal, string, List<string>, string, string)>();
         }
        
         public void opcGenerarRankVinos()
@@ -160,8 +160,8 @@ namespace PPAI_G13_3K4.Clases
                 
                 // se guarda cada atributo del vino en su variable correspondiente 
                 string nom = vinosPuntajePromSom[i].vino.getNombre();
-                float calSom = vinosPuntajePromSom[i].puntajePromSom;
-                float precSug = vinosPuntajePromSom[i].vino.getPrecio();
+                decimal calSom = vinosPuntajePromSom[i].puntajePromSom;
+                decimal precSug = vinosPuntajePromSom[i].vino.getPrecio();
                 List<string> datosBodega = vinosPuntajePromSom[i].vino.buscarDatosBodega();
                 string bodega = datosBodega[0];
                 string region = datosBodega[1];

@@ -18,14 +18,14 @@ namespace PPAI_G13_3K4.Pantalla
             InitializeComponent();
         }
 
-        internal void exportarExcel(List<(string, float, float, string, List<string>, string, string)> vinosRankingExcel)
+        internal void exportarExcel(List<(string, decimal, decimal, string, List<string>, string, string)> vinosRankingExcel)
         {
 
             for (int i=0; i < 10; i++) 
             {
                 string nom = (vinosRankingExcel[i].Item1);
-                float calSom = (vinosRankingExcel[i].Item2);
-                float precSug = (vinosRankingExcel[i].Item3);
+                decimal calSom = (vinosRankingExcel[i].Item2);
+                decimal precSug = (vinosRankingExcel[i].Item3);
                 string bod = (vinosRankingExcel[i].Item4);
                 string var = string.Join(", ", vinosRankingExcel[i].Item5);
                 string region = (vinosRankingExcel[i].Item6);

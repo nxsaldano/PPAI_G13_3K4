@@ -9,9 +9,9 @@ namespace PPAI_G13_3K4.Clases
     internal class Varietal
     {
         public string descripcion { get; set; }
-        public int porcentajeComposicion { get; set; }
+        public decimal porcentajeComposicion { get; set; }
 
-        public Varietal(string descripcion, int porcentajeComposicion)
+        public Varietal(string descripcion, decimal porcentajeComposicion)
         {
             this.descripcion = descripcion;
             this.porcentajeComposicion = porcentajeComposicion;

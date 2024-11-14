@@ -9,12 +9,12 @@ namespace PPAI_G13_3K4.Clases
     internal class Reseña
     {
         public DateTime fechaReseña { get; set; }
-        public float puntaje { get; set; }
+        public decimal puntaje { get; set; }
         public string comentario { get; set; }
-        public Boolean esPremium { get; set; }
+        public bool esPremium { get; set; }
         private Vino vino { get; set; }
 
-        public Reseña(DateTime fechaReseña, int puntaje, string comentario, Boolean esPremium, Vino vino)
+        public Reseña(DateTime fechaReseña, int puntaje, string comentario, bool esPremium, Vino vino)
         {
             this.fechaReseña = fechaReseña;
             this.puntaje = puntaje;
@@ -23,15 +23,12 @@ namespace PPAI_G13_3K4.Clases
             this.vino = vino;
         }
 
-        public float getPuntaje()
+        public decimal getPuntaje()
         {
             return puntaje;
         }
         public bool sosDePeriodo(DateTime fechaDesde, DateTime fechaHasta)
         {
-            fechaDesde = new DateTime(2023, 11, 21);
-            fechaHasta = new DateTime(2023, 11, 23);
-
             return fechaDesde <= this.fechaReseña && this.fechaReseña <= fechaHasta;
         }
         public bool sosDeSommelier()
