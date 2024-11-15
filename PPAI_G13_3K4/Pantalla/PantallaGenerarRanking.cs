@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Drawing;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using PPAI_G13_3K4.Clases;
 
@@ -39,6 +41,9 @@ namespace PPAI_G13_3K4
             if (validacion)
             {
                 gestor.tomarFechaDesdeRanking(datePickerFechaDesde.Value);
+                lblAviso.Text = "<---Seleccionar fecha hasta."; // lblAviso es un Label
+                lblAviso.Visible = true;
+                lblAviso.Location = new Point(230, 128);
             }
         }
 
@@ -71,7 +76,10 @@ namespace PPAI_G13_3K4
         {
             lblTipoReseña.Visible = true;
             cmbTipoReseña.Visible = true;
-            MessageBox.Show("Seleccionar el tipo de reseña.");
+            lblAviso.Text = "<---Seleccionar tipo reseña."; // lblAviso es un Label
+            lblAviso.Visible = true;
+            lblAviso.Location = new Point(230, 207);
+
         }
         private void tomarTipoReseña(object sender, EventArgs e)
         {
@@ -90,11 +98,14 @@ namespace PPAI_G13_3K4
         {
             lblFormasVisReporte.Visible = true;
             cmbFormasVisReporte.Visible = true;
+
         }
 
         public void solicitarFormaVisualizacion()
         {
-            MessageBox.Show("Seleccionar la forma de visualización.");
+            lblAviso.Text = "<---Seleccionar forma de visualizacion."; // lblAviso es un Label
+            lblAviso.Visible = true;
+            lblAviso.Location = new Point(230, 287);
         }
         private void tomarFormaVisualizacion(object sender, EventArgs e)
         {
